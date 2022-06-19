@@ -16,23 +16,30 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一级标题 1. 二级标题 1.1. 三级标题 1.1.1.1 四级标题        一级标题代码测试：&#96;&#96;&#96;pyprint(“Hello”)&#96;&#96;&#96; 注意：这里因为我放在md文件中的，所以加上了\，不解析&#96;&#96;&#96;，实际测试时请去掉\。 图片测试：  引用测试：  这是一条引用  1. 二级标题无序列表测试：  哈哈 嘿嘿 吼吼  1.1. 三级标题1.1.1.1 四级标题12git clone h">
+    <meta name="description" content="最小二乘法  xi 输入值 人脑判断的 yi 输出值 表示神经网络判断的 极大似然估计               交叉熵reference “损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://example.com/2022/06/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="损失函数">
+<meta property="og:url" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一级标题 1. 二级标题 1.1. 三级标题 1.1.1.1 四级标题        一级标题代码测试：&#96;&#96;&#96;pyprint(“Hello”)&#96;&#96;&#96; 注意：这里因为我放在md文件中的，所以加上了\，不解析&#96;&#96;&#96;，实际测试时请去掉\。 图片测试：  引用测试：  这是一条引用  1. 二级标题无序列表测试：  哈哈 嘿嘿 吼吼  1.1. 三级标题1.1.1.1 四级标题12git clone h">
+<meta property="og:description" content="最小二乘法  xi 输入值 人脑判断的 yi 输出值 表示神经网络判断的 极大似然估计               交叉熵reference “损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206191613522.jpg">
-<meta property="article:published_time" content="2022-06-18T15:33:29.000Z">
-<meta property="article:modified_time" content="2022-06-19T12:45:02.278Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121736870.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121736512.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121744543.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121924173.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121925045.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121926784.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121927715.png">
+<meta property="article:published_time" content="2022-06-19T12:51:05.000Z">
+<meta property="article:modified_time" content="2022-06-19T12:54:33.216Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="cv">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206191613522.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121736870.png">
   
   
   
-  <title>我的第一篇博客 - Hexo</title>
+  <title>损失函数 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="我的第一篇博客"></span>
+            <span id="subtitle" data-typed-text="损失函数"></span>
           
         </div>
 
@@ -208,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-18 23:33" pubdate>
-          June 18, 2022 pm
+        <time datetime="2022-06-19 20:51" pubdate>
+          June 19, 2022 pm
         </time>
       </span>
     
@@ -220,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          215 words
+          83 words
         
       </span>
     
@@ -231,7 +238,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -269,38 +276,37 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">我的第一篇博客</h1>
+            <h1 style="display: none">损失函数</h1>
             
             
               <div class="markdown-body">
                 
-                <ul>
-<li><a href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98">一级标题</a><ul>
-<li><a href="#1-%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98">1. 二级标题</a><ul>
-<li><a href="#11-%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98">1.1. 三级标题</a><ul>
-<li><a href="#1111-%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98">1.1.1.1 四级标题</a></li>
+                <ol>
+<li><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121736870.png" srcset="/img/loading.gif" lazyload alt="image-20220612173637834" width="200" /></li>
+<li><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121736512.png" srcset="/img/loading.gif" lazyload alt="image-20220612173643487" width="400" /></li>
+</ol>
+<h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121744543.png" srcset="/img/loading.gif" lazyload alt="image-20220612174418475" width="800" />
+
+<p>xi 输入值 人脑判断的</p>
+<p>yi 输出值 表示神经网络判断的</p>
+<h1 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h1><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121924173.png" srcset="/img/loading.gif" lazyload alt="image-20220612192436128" width="800" />
+
+
+
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121925045.png" srcset="/img/loading.gif" lazyload alt="image-20220612192507004" width="800" />
+
+
+
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121926784.png" srcset="/img/loading.gif" lazyload alt="image-20220612192615754"  width="800" />
+
+
+
+
+
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206121927715.png" srcset="/img/loading.gif" lazyload alt="image-20220612192709659"></p>
+<h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y64y1Q7hi?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=fd9c7ccc2ef98b19e9f3e533c10d6fb3">“损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p>代码测试：<br>```py<br>print(“Hello”)<br>```</p>
-<p>注意：这里因为我放在md文件中的，所以加上了\，不解析```，实际测试时请去掉\。</p>
-<p>图片测试：</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206191613522.jpg" srcset="/img/loading.gif" lazyload alt="752DC45340FCAFD344A53853C3E3B0F7"></p>
-<p>引用测试：</p>
-<blockquote>
-<p>这是一条引用</p>
-</blockquote>
-<h2 id="1-二级标题"><a href="#1-二级标题" class="headerlink" title="1. 二级标题"></a>1. 二级标题</h2><p>无序列表测试：</p>
-<ul>
-<li>哈哈</li>
-<li>嘿嘿</li>
-<li>吼吼</li>
-</ul>
-<h3 id="1-1-三级标题"><a href="#1-1-三级标题" class="headerlink" title="1.1. 三级标题"></a>1.1. 三级标题</h3><h4 id="1-1-1-1-四级标题"><a href="#1-1-1-1-四级标题" class="headerlink" title="1.1.1.1 四级标题"></a>1.1.1.1 四级标题</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/yin-qiyu/yi</span>n-qiyu.github.io.git<br><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -309,6 +315,41 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/note/" class="category-chain-item">note</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/note/machine-learning/" class="category-chain-item">machine learning</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/cv/">#cv</a>
+      
+    </div>
   
 </div>
 
@@ -318,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>我的第一篇博客</div>
-      <div>http://example.com/2022/06/18/我的第一篇博客/</div>
+      <div>损失函数</div>
+      <div>http://example.com/2022/06/19/损失函数/</div>
     </div>
     <div class="license-meta">
       
@@ -331,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 18, 2022</div>
+          <div>June 19, 2022</div>
         </div>
       
       
@@ -361,9 +402,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="jetson nano环境配置">
+                      <a href="/2022/06/19/transfomer/" title="transfomer">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">jetson nano环境配置</span>
+                        <span class="hidden-mobile">transfomer</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -371,8 +412,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/18/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2022/06/19/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="卷积神经网络">
+                        <span class="hidden-mobile">卷积神经网络</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
