@@ -16,15 +16,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="tensorrt  1dpkg -l | grep TensorRT     Deepstream  1deepstream-app --version-all     系统环境  1jtop     cuda  1nvcc -V     摄像头参数  12v4l2-ctl --list-devicesv4l2-ctl --list-formats-ext --device&#x3D;0     测试cs">
+    <meta name="description" content="tensorrt  1dpkg -l | grep TensorRT   Deepstream  1deepstream-app --version-all   系统环境  1jtop   cuda  1nvcc -V   摄像头参数  12v4l2-ctl --list-devicesv4l2-ctl --list-formats-ext --device&#x3D;0   测试csi摄像头  12ls">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jetson nano查看硬软件信息">
 <meta property="og:url" content="http://example.com/2022/06/19/jetson-nano%E6%9F%A5%E7%9C%8B%E7%A1%AC%E8%BD%AF%E4%BB%B6%E4%BF%A1%E6%81%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="tensorrt  1dpkg -l | grep TensorRT     Deepstream  1deepstream-app --version-all     系统环境  1jtop     cuda  1nvcc -V     摄像头参数  12v4l2-ctl --list-devicesv4l2-ctl --list-formats-ext --device&#x3D;0     测试cs">
+<meta property="og:description" content="tensorrt  1dpkg -l | grep TensorRT   Deepstream  1deepstream-app --version-all   系统环境  1jtop   cuda  1nvcc -V   摄像头参数  12v4l2-ctl --list-devicesv4l2-ctl --list-formats-ext --device&#x3D;0   测试csi摄像头  12ls">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-06-19T14:08:22.000Z">
-<meta property="article:modified_time" content="2022-06-19T14:10:32.970Z">
+<meta property="article:modified_time" content="2022-06-19T14:12:27.267Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jetson">
 <meta name="twitter:card" content="summary_large_image">
@@ -278,41 +278,30 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dpkg -l | grep TensorRT<br></code></pre></td></tr></table></figure>
 
-
-
 <ul>
 <li>Deepstream</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">deepstream-app --version-all<br></code></pre></td></tr></table></figure>
-
-
 
 <ul>
 <li>系统环境</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">jtop<br></code></pre></td></tr></table></figure>
 
-
-
 <ul>
 <li>cuda</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvcc -V<br></code></pre></td></tr></table></figure>
-
-
 
 <ul>
 <li>摄像头参数</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">v4l2-ctl --list-devices<br>v4l2-ctl --list-formats-ext --device=0<br></code></pre></td></tr></table></figure>
 
-
-
 <ul>
 <li>测试csi摄像头</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /dev/video*<br>nvgstcapture-1.0<br></code></pre></td></tr></table></figure>
-
 
                 
               </div>

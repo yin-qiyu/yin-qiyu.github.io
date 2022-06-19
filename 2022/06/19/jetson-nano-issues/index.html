@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264698567932-20220303213351835.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264702429809-20220303213352507.png">
 <meta property="article:published_time" content="2022-06-19T11:59:53.000Z">
-<meta property="article:modified_time" content="2022-06-19T12:06:34.925Z">
+<meta property="article:modified_time" content="2022-06-19T14:13:33.048Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jetson">
 <meta name="twitter:card" content="summary_large_image">
@@ -324,20 +324,12 @@
 <p>如果你已经把 jupyter 设置为了开机启动，那么在 <code>/etc/systemd/system</code> 中应该会有一个.service文件（如果没有可以自己百度教程设置一下），把它用<strong>sudo权限</strong>打开后内容如下：</p>
 <img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141848364.png" srcset="/img/loading.gif" lazyload alt="image-20220222141848364" width="800" />
 
-
-
-
-
 <p>在[Service]条目中添加如下语句：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">Environment=&quot;LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1&quot;<br></code></pre></td></tr></table></figure>
 
 <p>保存后退出编辑，重启就完成了设置，这样在每次开机启动jupyter时都会自动引入环境变量，也就不用手动输入了</p>
 <p>测试一下：</p>
 <img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141854183.png" srcset="/img/loading.gif" lazyload alt="image-20220222141854183" width="800"/>
-
-
-
-
 
 <p>一切正常，大功告成。</p>
 <h1 id="failed-with-error-code-1-in-tmp-pip-build"><a href="#failed-with-error-code-1-in-tmp-pip-build" class="headerlink" title="failed with error code 1 in /tmp/pip-build-*"></a>failed with error code 1 in /tmp/pip-build-*</h1><p>我在使用pip3 install paramiko 的时候，出现了报错</p>
@@ -348,8 +340,6 @@
 
 <p>然后再执行pip3 install paramiko，然没有报错安装成功了 。</p>
 <h1 id="删除opt下的文件"><a href="#删除opt下的文件" class="headerlink" title="删除opt下的文件"></a>删除opt下的文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rm</span> -rf filename<br></code></pre></td></tr></table></figure>
-
-
 
 <h1 id="apt下载失败"><a href="#apt下载失败" class="headerlink" title="apt下载失败"></a>apt下载失败</h1><p>下载过程如果因为网络原因失败的话可以在命令后加上 -i <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> 来使用清华镜像源</p>
 <h1 id="‘SPPF’问题"><a href="#‘SPPF’问题" class="headerlink" title="‘SPPF’问题"></a>‘SPPF’问题</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/RooKichenn/article/details/120866650">(7条消息) Can‘t get attribute ‘SPPF‘ on ＜module ‘models.common‘ from ‘C:\Users\dell\Desktop\yolov5-5.0\mo_RookiChen的博客-CSDN博客</a></p>
@@ -371,26 +361,26 @@
 <h1 id="darknet调用csi"><a href="#darknet调用csi" class="headerlink" title="darknet调用csi"></a>darknet调用csi</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/x16516581/article/details/100570038">(7条消息) jetson-nano项目：使用csi摄像头运行yolov3-tiny demo_x16516581的博客-CSDN博客_csi摄像头 jetson nano</a></p>
 <h1 id="存储器扩容"><a href="#存储器扩容" class="headerlink" title="存储器扩容"></a>存储器扩容</h1><p>1.打开虚拟机(Ubuntu 18.04)的终端，输入以下命令安装扩容软件</p>
 <p>sudo apt install gparted</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264666720520-20220303213343533.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264666720520-20220303213343533.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>2.在虚拟机的系统应用内搜索并打开gparted</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220228195911196.png" srcset="/img/loading.gif" lazyload alt="image-20220228195911196" style="zoom:25%;" /> 
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220228195911196.png" srcset="/img/loading.gif" lazyload alt="image-20220228195911196" style="zoom:25%;" />
 
 <p>3.选择U盘的盘符，切记这几不能选错。例如我这里选择/dev/sdb，可以看到/sdb1后面有一部分是白色和一部分是灰色。</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264672744049-20220303213345080.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264672744049-20220303213345080.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>4.右键选择Unmount来卸载/dev/sdb1，</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264675462158.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264675462158.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>5.右键选择Check检查U盘，点击上面的勾‘√’确认，再点击Apply。</p>
 <p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264678560241-20220228195940915-20220303213346062.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264682834350-20220303213346530.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264685906494-20220303213347042.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264682834350-20220303213346530.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264685906494-20220303213347042.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>6.选择Resize/Move修改容量大小，直接将右边白色部分拖到最右边，再点击Resize/Move。</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264688738464-20220303213347575.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264692516357-20220303213348078.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264688738464-20220303213347575.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264692516357-20220303213348078.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>7.点击上面的勾‘√’确认，再点击Apply.</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264695929779-20220303213348562.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264698567932-20220303213351835.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264695929779-20220303213348562.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264698567932-20220303213351835.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <p>8.到此U盘扩容完成。</p>
-<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264702429809-20220303213352507.png" srcset="/img/loading.gif" lazyload alt="image.png"> </p>
+<p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/1643264702429809-20220303213352507.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
 <h1 id="备份系统"><a href="#备份系统" class="headerlink" title="备份系统"></a>备份系统</h1><p><a target="_blank" rel="noopener" href="https://www.jetsonhacks.com/2020/08/08/clone-sd-card-jetson-nano-and-xavier-nx/">Clone SD Card – Jetson Nano and Xavier NX – JetsonHacks</a></p>
 <p><a target="_blank" rel="noopener" href="https://3g.163.com/dy/article/GP684MJV0552NFB7.html">为树莓派制作系统镜像时进行瘦身，方便后续保存与批量写入|树莓派|tf卡|fdisk|linux|磁盘_手机网易网 (163.com)</a></p>
 <h1 id="darknet调用csi绿屏"><a href="#darknet调用csi绿屏" class="headerlink" title="darknet调用csi绿屏"></a>darknet调用csi绿屏</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44360908/article/details/122777848">解决Jetson Nano使用CSI摄像头在Darknet下实时检测绿屏_/<em>wywy</em>/的博客-CSDN博客</a></p>
