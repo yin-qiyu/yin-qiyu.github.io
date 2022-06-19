@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>jetson nano查看硬软件信息</title>
+    <link href="/2022/06/19/jetson-nano%E6%9F%A5%E7%9C%8B%E7%A1%AC%E8%BD%AF%E4%BB%B6%E4%BF%A1%E6%81%AF/"/>
+    <url>/2022/06/19/jetson-nano%E6%9F%A5%E7%9C%8B%E7%A1%AC%E8%BD%AF%E4%BB%B6%E4%BF%A1%E6%81%AF/</url>
+    
+    <content type="html"><![CDATA[<ul><li>tensorrt</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dpkg -l | grep TensorRT<br></code></pre></td></tr></table></figure><ul><li>Deepstream</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">deepstream-app --version-all<br></code></pre></td></tr></table></figure><ul><li>系统环境</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">jtop<br></code></pre></td></tr></table></figure><ul><li>cuda</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvcc -V<br></code></pre></td></tr></table></figure><ul><li>摄像头参数</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">v4l2-ctl --list-devices<br>v4l2-ctl --list-formats-ext --device=0<br></code></pre></td></tr></table></figure><ul><li>测试csi摄像头</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /dev/video*<br>nvgstcapture-1.0<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>note</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>jetson</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>transfomer</title>
     <link href="/2022/06/19/transfomer/"/>
     <url>/2022/06/19/transfomer/</url>
