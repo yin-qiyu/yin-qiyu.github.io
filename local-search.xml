@@ -8,7 +8,7 @@
     <link href="/2022/06/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <url>/2022/06/18/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     
-    <content type="html"><![CDATA[<h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3>]]></content>
+    <content type="html"><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p>代码测试：<br>```py<br>print(“Hello”)<br>```</p><p>注意：这里因为我放在md文件中的，所以加上了\，不解析```，实际测试时请去掉\。</p><p>图片测试：</p><p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206191613522.jpg" alt="752DC45340FCAFD344A53853C3E3B0F7"></p><p>引用测试：</p><blockquote><p>这是一条引用</p></blockquote><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>无序列表测试：</p><ul><li>哈哈</li><li>嘿嘿</li><li>吼吼</li></ul><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4>]]></content>
     
     
     
