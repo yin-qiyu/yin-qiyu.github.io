@@ -23,37 +23,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="目录  基本环境配置 检查nvcc 安装torch和vision（可忽略）   jetson nao其他配置 更新镜像源 apt pip docker   安装pytorch和torchvison miniforge包管理(选) miniforge简介 安装miniforge 安装pytorch、torchvision 安装新的虚拟环境 pytorch1.8 orchvision v0.9.0">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220225161019891.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220223224621637.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206192219149.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141236206.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141251282.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141306843.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141316874.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206192217897.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226195653355.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141336662.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141405289.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141420401.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226204438666.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141452790.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200602124909227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE4MTM1MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226204943881.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220302182808960.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220312224805927.png">
-<meta property="og:image" content="https://developer.nvidia.com/sites/default/files/akamai/deeplearning/tensorrt/trt-info.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141611316.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220312212555390.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141647174.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141654527.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220224143750683.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220224143905042.png">
+<meta property="og:image" content="http://example.com/img/jetson-nano.jpg">
 <meta property="article:published_time" content="2022-06-19T08:20:25.000Z">
-<meta property="article:modified_time" content="2022-06-19T14:56:01.049Z">
+<meta property="article:modified_time" content="2022-06-20T05:35:42.419Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jetson">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220225161019891.png">
+<meta name="twitter:image" content="http://example.com/img/jetson-nano.jpg">
   
   
   
@@ -352,7 +328,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">保存后退出，执行 <span class="hljs-built_in">source</span> ~/.bashrc，使得环境变量生效。<br></code></pre></td></tr></table></figure>
 
 <p>在命令行输入 <code>nvcc -V</code> 如果正常输出，说明CUDA路径配置成功</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220225161019891.png" srcset="/img/loading.gif" lazyload alt="image-20220225161019891" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220225161019891.png" srcset="/img/loading.gif" lazyload alt="image-20220225161019891" style="zoom:50%;">
 
 <h2 id="安装torch和vision（可忽略）"><a href="#安装torch和vision（可忽略）" class="headerlink" title="安装torch和vision（可忽略）"></a>安装torch和vision（可忽略）</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048">官网</a></li>
@@ -362,7 +338,7 @@
 <p><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220223224621637.png" srcset="/img/loading.gif" lazyload alt="image-20220223224621637"></p>
 <p>安装pytorch，首先CUDA的步骤得过一下可以看到nvcc -V</p>
 <p>安装pytorch跟CUDA的版本要对应</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206192219149.png" srcset="/img/loading.gif" lazyload alt="image-20220619221908044" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206192219149.png" srcset="/img/loading.gif" lazyload alt="image-20220619221908044" style="zoom:50%;">
 
 <p>网上找了个1.6.0的安装包通过winscp上传到jetson后离线安装下，该离线包可以到资料5、常用库和模型中获取</p>
 <p>sudo pip3 install torch-1.6.0a0+b31f58d-cp36-cp36m-linux_aarch64.whl</p>
@@ -375,7 +351,7 @@
 <p>import torch</p>
 <p>print(torch.<strong>version</strong>)</p>
 <p>查看安装的版本</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141236206.png" srcset="/img/loading.gif" lazyload alt="image-20220222141236206" width="500" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141236206.png" srcset="/img/loading.gif" lazyload alt="image-20220222141236206" width="500">
 
 <p>接下来继续在python3环境中测试下pytorch的功能</p>
 <p><strong>from</strong> <strong>future</strong> <strong>import</strong> print_function</p>
@@ -392,7 +368,7 @@
 <p><strong>import</strong> torch</p>
 <p>torch.cuda.is_available()</p>
 <p>测试完毕后接下来再安装torchvision,根官网介绍,pytorch1.6吻合的torch版本为0.7.0</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141251282.png" srcset="/img/loading.gif" lazyload alt="image-20220222141251282" width="500" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141251282.png" srcset="/img/loading.gif" lazyload alt="image-20220222141251282" width="500" style="zoom:50%;">
 
 <p>sudo apt-get install libjpeg-dev zlib1g-dev</p>
 <p>git clone –branch v0.7.0 <a target="_blank" rel="noopener" href="https://github.com/pytorch/vision">https://github.com/pytorch/vision</a> torchvision</p>
@@ -400,7 +376,7 @@
 <p>export BUILD_VERSION=0.7.0</p>
 <p>sudo python3 setup.py install</p>
 <p>注意:安装可能会确实一些文件，这个可以安装相应的文件来解决，例如笔者遇到的是确实一下三个文件所以按了一下三个包</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141306843.png" srcset="/img/loading.gif" lazyload alt="image-20220222141306843" width="1000" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141306843.png" srcset="/img/loading.gif" lazyload alt="image-20220222141306843" width="1000" style="zoom:50%;">
 
 <p>sudo apt install libavcodec-dev</p>
 <p>sudo apt install libavformat-dev</p>
@@ -409,7 +385,7 @@
 <p>到python环境中输入下代码可以查看版本是否对应</p>
 <p>import torchvision</p>
 <p>print(torchvision.<strong>version</strong>)</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141316874.png" srcset="/img/loading.gif" lazyload alt="image-20220222141316874" width="500" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141316874.png" srcset="/img/loading.gif" lazyload alt="image-20220222141316874" width="500" style="zoom:50%;">
 
 <h1 id="jetson-nao其他配置"><a href="#jetson-nao其他配置" class="headerlink" title="jetson nao其他配置"></a>jetson nao其他配置</h1><h2 id="更新镜像源"><a href="#更新镜像源" class="headerlink" title="更新镜像源"></a>更新镜像源</h2><h3 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo <span class="hljs-built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak<br></code></pre></td></tr></table></figure>
 
@@ -459,7 +435,7 @@
 <li><p>版本要对应</p>
 </li>
 </ul>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206192217897.png" srcset="/img/loading.gif" lazyload alt="image-20220619221742842" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/202206192217897.png" srcset="/img/loading.gif" lazyload alt="image-20220619221742842" style="zoom:50%;">
 
 <ul>
 <li><p>下载官方提供的<a target="_blank" rel="noopener" href="https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl">torch-1.8.0-cp36-cp36m-linux_aarch64.whl</a>包</p>
@@ -474,9 +450,9 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">python3<br><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torchvision<br><span class="hljs-built_in">print</span>(torch.__version__)<br><span class="hljs-built_in">print</span>(torchvision.__version__)<br>torch.cuda.is_available()<br></code></pre></td></tr></table></figure>
 
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226195653355.png" srcset="/img/loading.gif" lazyload alt="image-20220226195653355" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226195653355.png" srcset="/img/loading.gif" lazyload alt="image-20220226195653355" style="zoom:50%;">
 
-<h2 id="miniforge包管理-选"><a href="#miniforge包管理-选" class="headerlink" title="miniforge包管理(选)"></a>miniforge包管理(选)</h2><p>:bangbang:<strong><font color='red'>此内容为可非必要配置，因为jetson是arm版本无法直接安装anaconda环境，如果需要在jetson上安装anaconda可以接着往下看，若不需要，请跳过</font></strong></p>
+<h2 id="miniforge包管理-选"><a href="#miniforge包管理-选" class="headerlink" title="miniforge包管理(选)"></a>miniforge包管理(选)</h2><p>:bangbang:<strong><font color="red">此内容为可非必要配置，因为jetson是arm版本无法直接安装anaconda环境，如果需要在jetson上安装anaconda可以接着往下看，若不需要，请跳过</font></strong></p>
 <h3 id="miniforge简介"><a href="#miniforge简介" class="headerlink" title="miniforge简介"></a><a target="_blank" rel="noopener" href="https://github.com/conda-forge/miniforge/releases">miniforge简介</a></h3><p>conda是一个开源的包、环境管理器，可以用于在同一个机器上安装不同版本的软件包及其依赖，并能够在不同的环境之间切换。搞深度学习的应该都十分熟悉anaconda，但是NVIDIA Jetson Xavier NX是<strong>arm</strong>架构的，anaconda及其精简版miniconda并不支持arm64架构。现在主流的CPU架构分为Intel的x86/x64架构和ARM的ARM/ARM64两种，平常用的电脑大部分都是x86/x64的（苹果除外），Xavier使用的是ARM64，所以很多在x86/x64上能用的的东西到了它这里就不能用了。<strong>这一点请谨记，如果你在Jetson上遇到什么奇奇怪怪的例如“No such file or directory”之类的问题，第一时间要考虑是不是版本不是ARM64的版本</strong>。<br>在ARM64上的anaconda替代品是miniforge，miniforge与miniconda的区别在于miniforge的下载通道是conda-forge，其他基本没什么不同。</p>
 <h3 id="安装miniforge"><a href="#安装miniforge" class="headerlink" title="安装miniforge"></a>安装miniforge</h3><ol>
 <li><p>我下载的是 <code>Miniforge-pypy3-4.11.0-0-Linux-aarch64.sh</code>,,代表适用于arrch64架构下的Linux系统。（ARM64对应32位和64位分为arrch32和arrch64）</p>
@@ -507,14 +483,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda deactivate          <span class="hljs-comment">#退出环境</span><br>conda remove -n pytorch --all<br><br>conda info -e            <span class="hljs-comment">#查看已有环境</span><br></code></pre></td></tr></table></figure>
 
 <p>激活成功会换名字</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141336662.png" srcset="/img/loading.gif" lazyload alt="image-20220222141336662" width="1000" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141336662.png" srcset="/img/loading.gif" lazyload alt="image-20220222141336662" width="1000" style="zoom:50%;">
 
 <h3 id="pytorch1-8"><a href="#pytorch1-8" class="headerlink" title="pytorch1.8"></a>pytorch1.8</h3><p>直接输入命令安装PyTorch，<code>pip3</code>是python3的pip，如果没装，就换成<code>pip</code>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install -U future psutil dataclasses typing-extensions pyyaml tqdm seaborn<br>wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl -O torch-1.8.0-cp36-cp36m-linux_aarch64.whl <br>pip3 install torch-1.8.0-cp36-cp36m-linux_aarch64.whl<br></code></pre></td></tr></table></figure>
 
 <p>如果网络不好的话，也可以先把PyTorch的whl文件下载下来，NVIDIA官方网址是：<a target="_blank" rel="noopener" href="https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048">https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048</a></p>
 <ul>
-<li><strong>==<font color='red'>issue:</font>==</strong></li>
+<li><strong>==<font color="red">issue:</font>==</strong></li>
 </ul>
 <p>如果出现<code>Illegal instruction (core dumped)</code>的错误，这是由于numpy 1.19.5和OpenBLAS冲突引起的，修改其中一项即可。选择以下两种做法之一：<br>（1）降低numpy版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install -U <span class="hljs-string">&quot;numpy==1.19.4&quot;</span><br></code></pre></td></tr></table></figure>
@@ -546,7 +522,7 @@
 <h2 id="增加Swap分区大小"><a href="#增加Swap分区大小" class="headerlink" title="增加Swap分区大小"></a>增加Swap分区大小</h2><ul>
 <li>先查看初试交换分区大小：</li>
 </ul>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141405289.png" srcset="/img/loading.gif" lazyload alt="image-20220222141405289" width="800" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141405289.png" srcset="/img/loading.gif" lazyload alt="image-20220222141405289" width="800">
 
 <ul>
 <li>生成swapfile文件操作如下</li>
@@ -559,7 +535,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo bash -c <span class="hljs-string">&#x27;echo &quot;/var/swapfile swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <p>设置成功后：</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141420401.png" srcset="/img/loading.gif" lazyload alt="image-20220222141420401" width="1000" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141420401.png" srcset="/img/loading.gif" lazyload alt="image-20220222141420401" width="1000">
 
 <h2 id="nomachine（虚拟网络控制台）"><a href="#nomachine（虚拟网络控制台）" class="headerlink" title="nomachine（虚拟网络控制台）"></a>nomachine（虚拟网络控制台）</h2><p>官网：<a target="_blank" rel="noopener" href="https://www.nomachine.com/">NoMachine - Free Remote Desktop For Everybody</a></p>
 <ul>
@@ -578,7 +554,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;key name=<span class="hljs-string">&quot;enabled&quot;</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;b&quot;</span>&gt;<br>   &lt;summary&gt;Enable remote access to the desktop&lt;/summary&gt;<br>   &lt;description&gt;<br>    If <span class="hljs-literal">true</span>, allows remote access to the desktop via the RFB<br>    protocol. Users on remote machines may <span class="hljs-keyword">then</span> connect to the<br>    desktop using a VNC viewer.<br>   &lt;/description&gt;<br>   &lt;default&gt;<span class="hljs-literal">false</span>&lt;/default&gt;<br>  &lt;/key&gt;<br></code></pre></td></tr></table></figure>
 
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226204438666.png" srcset="/img/loading.gif" lazyload alt="image-20220226204438666" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226204438666.png" srcset="/img/loading.gif" lazyload alt="image-20220226204438666" style="zoom:50%;">
 
 <ul>
 <li>编译文件</li>
@@ -586,10 +562,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo glib-compile-schemas /usr/share/glib-2.0/schemas<br></code></pre></td></tr></table></figure>
 
 <p>完成以上步骤，正常来说就可以打开桌面共享的图标了。</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141452790.png" srcset="/img/loading.gif" lazyload alt="image-20220222141452790" width="500" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141452790.png" srcset="/img/loading.gif" lazyload alt="image-20220222141452790" width="500">
 
 <p>设置好后（不设置也可以）</p>
-<img src="https://img-blog.csdnimg.cn/20200602124909227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE4MTM1MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"  />
+<img src="https://img-blog.csdnimg.cn/20200602124909227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE4MTM1MA==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述">
 
 <ul>
 <li>配置vnc设置</li>
@@ -610,14 +586,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">[Desktop Entry]<br><br>Type=Application<br><br>Name=Vino VNC server<br><br>Exec=/usr/lib/vino/vino-server<br><br>NoDisplay=<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
 <ul>
-<li><font color='red'>重启生效</font></li>
+<li><font color="red">重启生效</font></li>
 </ul>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo reboot<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>电脑端可下载<a target="_blank" rel="noopener" href="https://www.realvnc.com/en/connect/download/viewer/">Download VNC Viewer | VNC® Connect (realvnc.com)</a></p>
 </li>
-<li><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226204943881.png" srcset="/img/loading.gif" lazyload alt="image-20220226204943881" style="zoom:33%;" /></li>
+<li><img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220226204943881.png" srcset="/img/loading.gif" lazyload alt="image-20220226204943881" style="zoom:33%;"></li>
 <li><p>配置jetson nano的ip和密码即可连接</p>
 <ul>
 <li><ul>
@@ -625,9 +601,9 @@
 </ul>
 </li>
 </ul>
-  <img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220302182808960.png" srcset="/img/loading.gif" lazyload alt="image-20220302182808960" style="zoom:50%;" />
+  <img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220302182808960.png" srcset="/img/loading.gif" lazyload alt="image-20220302182808960" style="zoom:50%;">
 
-  <img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220312224805927.png" srcset="/img/loading.gif" lazyload alt="image-20220312224805927" width="500" /></li>
+  <img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220312224805927.png" srcset="/img/loading.gif" lazyload alt="image-20220312224805927" width="500"></li>
 </ul>
 <h2 id="TensoRT"><a href="#TensoRT" class="headerlink" title="TensoRT"></a>TensoRT</h2><h3 id="TensoRT介绍"><a href="#TensoRT介绍" class="headerlink" title="TensoRT介绍"></a>TensoRT介绍</h3><p> 模型加速越来越成为深度学习工程中的刚需了，最近的CVPR和ICLR会议中，模型的压缩和剪枝是受到的关注越来越多。毕竟工程上，算法工程师的深度学习模型是要在嵌入式平台跑起来，投入应用的。在模型的推理（inference）过程中，计算速度是很重要的。比如自动驾驶，如果使用一个经典的深度学习模型，很容易就跑到200毫秒的延时，那么这意味着，在实际驾驶过程中，你的车一秒钟只能看到5张图像，这当然是很危险的一件事。所以，对于实时响应比较高的任务，模型的加速时很有必要的一件事情了。</p>
 <p>如果你使用英伟达的产品，比如PX2，那么在平台上部署模型投入应用，很多时候就需要用到专门的模型加速工具 —— TensorRT。</p>
@@ -641,13 +617,13 @@
 <li>TensorRT支持INT8和FP16的计算。深度学习网络在训练时，通常使用 32 位或 16 位数据。TensorRT则在网络的推理时选用不这么高的精度，达到加速推断的目的。</li>
 <li>TensorRT对于网络结构进行了重构，把一些能够合并的运算合并在了一起，针对GPU的特性做了优化。现在大多数深度学习框架是没有针对GPU做过性能优化的，而英伟达，GPU的生产者和搬运工，自然就推出了针对自己GPU的加速工具TensorRT。一个深度学习模型，在没有优化的情况下，比如一个卷积层、一个偏置层和一个reload层，这三层是需要调用三次cuDNN对应的API，但实际上这三层的实现完全是可以合并到一起的，TensorRT会对一些可以合并网络进行合并。</li>
 </ol>
-<img src="https://developer.nvidia.com/sites/default/files/akamai/deeplearning/tensorrt/trt-info.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:50%;" />
+<img src="https://developer.nvidia.com/sites/default/files/akamai/deeplearning/tensorrt/trt-info.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:50%;">
 
 <h3 id="检查自带TensorRT环境（选）"><a href="#检查自带TensorRT环境（选）" class="headerlink" title="检查自带TensorRT环境（选）"></a>检查自带TensorRT环境（选）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/src/tensorrt/samples  <br>sudo make  <span class="hljs-comment">#编译大约7分钟</span><br>../bin/sample_mnist<br></code></pre></td></tr></table></figure>
 
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141611316.png" srcset="/img/loading.gif" lazyload alt="image-20220222141611316" width="300" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141611316.png" srcset="/img/loading.gif" lazyload alt="image-20220222141611316" width="300">
 
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220312212555390.png" srcset="/img/loading.gif" lazyload alt="image-20220312212555390" width="400" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220312212555390.png" srcset="/img/loading.gif" lazyload alt="image-20220312212555390" width="400">
 
 <h3 id="jetson-inference库安装（选）"><a href="#jetson-inference库安装（选）" class="headerlink" title="jetson inference库安装（选）"></a><a target="_blank" rel="noopener" href="https://github.com/dusty-nv/jetson-inference">jetson inference</a>库安装（选）</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13998685">参考资料</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br>sudo apt autoremove<br>sudo apt upgrade<br>sudo apt install cmake<br><span class="hljs-built_in">mkdir</span> ~/workspace<br><span class="hljs-built_in">cd</span> workspace<br>git <span class="hljs-built_in">clone</span> https://gitee.com/weikun-xuan/jetson-inference.git<br><span class="hljs-built_in">cd</span> jetson-inference<br>git submodule update --init<br></code></pre></td></tr></table></figure>
@@ -747,12 +723,12 @@
 <ul>
 <li>将<code>Makefile</code>的前三行修改一下</li>
 </ul>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141647174.png" srcset="/img/loading.gif" lazyload alt="image-20220222141647174" width="300" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141647174.png" srcset="/img/loading.gif" lazyload alt="image-20220222141647174" width="300">
 
 <ul>
 <li>和如图所示的nvcc位置（若前面配置了环境变量则无需这一步操作）</li>
 </ul>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141654527.png" srcset="/img/loading.gif" lazyload alt="image-20220222141654527" width="500" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220222141654527.png" srcset="/img/loading.gif" lazyload alt="image-20220222141654527" width="500">
 
 <ul>
 <li><p>修改好猴按<code>esc</code>左下角出现冒号后<code>wq</code>保存退出</p>
@@ -763,10 +739,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">make -j4<br></code></pre></td></tr></table></figure>
 
 <p>编译完成如图</p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220224143750683.png" srcset="/img/loading.gif" lazyload alt="image-20220224143750683" width='2000' style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220224143750683.png" srcset="/img/loading.gif" lazyload alt="image-20220224143750683" width="2000" style="zoom:25%;">
 
 <p>在命令行下输入  <code>./darknet</code></p>
-<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220224143905042.png" srcset="/img/loading.gif" lazyload alt="image-20220224143905042"  style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/yin-qiyu/picbed/master/img/image-20220224143905042.png" srcset="/img/loading.gif" lazyload alt="image-20220224143905042" style="zoom:50%;">
 
 <p>在yolo官网下载yolov4和yolov4-tiny的权重文件放入文件夹</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#Yolov4图片的检测</span><br>./darknet detect cfg/yolov4.cfg yolov4.weights data/dog.jpg <span class="hljs-comment"># 简写版</span><br><br>./darknet detector <span class="hljs-built_in">test</span> cfg/coco.data cfg/yolov4.cfg yolov4.weights data/dog.jpg <span class="hljs-comment"># 完整版</span><br><br> <br><span class="hljs-comment">#Yolov4-tiny图片的检测</span><br>./darknet detect cfg/yolov4-tiny.cfg yolov4-tiny.weights data/dog.jpg <span class="hljs-comment"># 简写版</span><br><br>./darknet detector <span class="hljs-built_in">test</span> cfg/coco.data cfg/yolov4-tiny.cfg yolov4-tiny.weights data/dog.jpg <span class="hljs-comment"># 完整版</span><br><br> <br><span class="hljs-comment"># 改变检测阈值</span><br><span class="hljs-comment"># 默认情况下，YOLO仅显示检测到的置信度为.25或更高的对象。您可以通过将-thresh标志传递给yolo命令来更改此设置。</span><br><br><span class="hljs-comment">#例如，要显示所有检测，您可以将阈值设置为0.1：</span><br>./darknet detect cfg/yolov4-tiny.cfg yolov4-tiny.weights data/dog.jpg -thresh 0.1<br><br></code></pre></td></tr></table></figure>
