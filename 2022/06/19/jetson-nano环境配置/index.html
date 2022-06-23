@@ -23,13 +23,37 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="目录  基本环境配置 检查nvcc 安装torch和vision（可忽略）   jetson nao其他配置 更新镜像源 apt pip docker   安装pytorch和torchvison miniforge包管理(选) miniforge简介 安装miniforge 安装pytorch、torchvision 安装新的虚拟环境 pytorch1.8 orchvision v0.9.0">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/jetson-nano.jpg">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225161019891.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220223224621637.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/202206192219149.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141236206.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141251282.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141306843.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141316874.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/202206192217897.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220226195653355.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141336662.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141405289.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141420401.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220226204438666.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141452790.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE4MTM1MA==,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220226204943881.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220302182808960.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220312224805927.png">
+<meta property="og:image" content="https://developer.nvidia.com/sites/default/files/akamai/deeplearning/tensorrt/trt-info.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141611316.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220312212555390.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141647174.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220222141654527.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220224143750683.png">
+<meta property="og:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220224143905042.png">
 <meta property="article:published_time" content="2022-06-19T08:20:25.000Z">
-<meta property="article:modified_time" content="2022-06-23T14:20:36.058Z">
+<meta property="article:modified_time" content="2022-06-23T14:34:20.664Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="jetson">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/jetson-nano.jpg">
+<meta name="twitter:image" content="http://example.com/2022/06/19/jetson-nano%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/image-20220225161019891.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
