@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>test picture</title>
+    <link href="/2022/06/23/test-picture/"/>
+    <url>/2022/06/23/test-picture/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/06/23/test-picture/image-20220623221100327.png" alt="image-20220623221100327"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>jetson nano查看硬软件信息</title>
     <link href="/2022/06/19/jetson-nano%E6%9F%A5%E7%9C%8B%E7%A1%AC%E8%BD%AF%E4%BB%B6%E4%BF%A1%E6%81%AF/"/>
     <url>/2022/06/19/jetson-nano%E6%9F%A5%E7%9C%8B%E7%A1%AC%E8%BD%AF%E4%BB%B6%E4%BF%A1%E6%81%AF/</url>
