@@ -16,26 +16,26 @@
   <meta name="author" content="yin-qiyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="目录：  最小二乘法 极大似然估计 交叉熵 reference      最小二乘法  xi 输入值 人脑判断的 yi 输出值 表示神经网络判断的 极大似然估计       交叉熵reference “损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”">
+    <meta name="description" content="目录：  最小二乘法 极大似然估计 交叉熵 reference      最小二乘法  xi 输入值 人脑判断的 yi 输出值 表示神经网络判断的 极大似然估计        交叉熵reference “损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="损失函数">
 <meta property="og:url" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="目录：  最小二乘法 极大似然估计 交叉熵 reference      最小二乘法  xi 输入值 人脑判断的 yi 输出值 表示神经网络判断的 极大似然估计       交叉熵reference “损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”">
+<meta property="og:description" content="目录：  最小二乘法 极大似然估计 交叉熵 reference      最小二乘法  xi 输入值 人脑判断的 yi 输出值 表示神经网络判断的 极大似然估计        交叉熵reference “损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121736870.png">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121736512.png">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121744543.png">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121924173.png">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121925045.png">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121926784.png">
-<meta property="og:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121927715.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042972.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042831.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042823.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043911.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043694.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043996.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043241.png">
 <meta property="article:published_time" content="2022-06-19T12:51:05.000Z">
-<meta property="article:modified_time" content="2022-06-24T11:10:05.517Z">
+<meta property="article:modified_time" content="2022-06-27T12:43:37.147Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="cv">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121736870.png">
+<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042972.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -295,20 +295,21 @@
 <li><a href="#reference">reference</a></li>
 </ul>
 <ol>
-<li><img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121736870.png" srcset="/img/loading.gif" lazyload alt="image-20220612173637834" width="200"></li>
-<li><img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121736512.png" srcset="/img/loading.gif" lazyload alt="image-20220612173643487" width="400"></li>
+<li><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042972.png" srcset="/img/loading.gif" lazyload alt="image-20220612173637834" width="200" /></li>
+<li><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042831.png" srcset="/img/loading.gif" lazyload alt="image-20220612173643487" width="400" /></li>
 </ol>
-<h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121744543.png" srcset="/img/loading.gif" lazyload alt="image-20220612174418475" width="800">
+<h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272042823.png" srcset="/img/loading.gif" lazyload alt="image-20220612174418475" width="800" style="zoom:50%;" />
 
 <p>xi 输入值 人脑判断的</p>
 <p>yi 输出值 表示神经网络判断的</p>
-<h1 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h1><img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121924173.png" srcset="/img/loading.gif" lazyload alt="image-20220612192436128" width="800">
+<h1 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h1><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043911.png" srcset="/img/loading.gif" lazyload alt="image-20220612192436128" width="800" style="zoom:50%;" />
 
-<img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121925045.png" srcset="/img/loading.gif" lazyload alt="image-20220612192507004" width="800">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043694.png" srcset="/img/loading.gif" lazyload alt="image-20220612192507004" width="800" style="zoom:50%;" />
 
-<img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121926784.png" srcset="/img/loading.gif" lazyload alt="image-20220612192615754" width="800">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043996.png" srcset="/img/loading.gif" lazyload alt="image-20220612192615754"  width="800" style="zoom:50%;" />
 
-<p><img src="/2022/06/19/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/202206121927715.png" srcset="/img/loading.gif" lazyload alt="image-20220612192709659"></p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272043241.png" srcset="/img/loading.gif" lazyload alt="image-20220612192709659" style="zoom:50%;" />
+
 <h1 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h1><h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y64y1Q7hi?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=fd9c7ccc2ef98b19e9f3e533c10d6fb3">“损失函数”是如何设计出来的？直观理解“最小二乘法”和“极大似然估计法”</a></li>
 </ul>

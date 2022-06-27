@@ -23,28 +23,28 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="目录：  Nomalization BN LN   query、 key、 value 注意力机制 scale dot-product attention 如何做mask   multihead 注意力层的应用 编码器 解码器   Position-wise Feed-Forward Networks reference  Nomalization 论文： 1、Batch Normalizatio">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220623221418193.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/137d2befec9350a5cddeaf2591eff2af142c170e.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/cd4ee7ceb31d8b206eb89528ba4117b28519808f.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624095211864.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624095910139.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624101415141.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624101015223.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624101043119.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624175003629.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624175923794.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624180129309.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624180857750.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624181836268.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624182114784.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624182216941.png">
-<meta property="og:image" content="http://example.com/2022/06/19/transfomer/image-20220624183158937.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049635.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049484.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049646.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049600.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049448.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049603.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049516.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049604.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049191.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049392.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049041.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049141.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050258.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050083.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050157.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050310.png">
 <meta property="article:published_time" content="2022-06-19T12:51:40.000Z">
-<meta property="article:modified_time" content="2022-06-24T10:35:45.241Z">
+<meta property="article:modified_time" content="2022-06-27T12:50:15.780Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="cv">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/06/19/transfomer/image-20220623221418193.png">
+<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049635.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -329,7 +329,7 @@
 <li><p>BN是对全局算均值方差</p>
 </li>
 </ul>
-<img src="/2022/06/19/transfomer/image-20220623221418193.png" srcset="/img/loading.gif" lazyload alt="image-20220623221418193" style="zoom: 33%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049635.png" srcset="/img/loading.gif" lazyload alt="image-20220623221418193" style="zoom: 33%;" />
 
 <ul>
 <li><p>LayerNorm 在操作上 和 BatchNorm (二维输入) 的关系</p>
@@ -339,7 +339,7 @@
 <h2 id="BN"><a href="#BN" class="headerlink" title="BN"></a>BN</h2><p>BatchNorm 简单的 2 维 情况</p>
 <p>每一行是一个样本 X，每一列是 一个 feature</p>
 <p>BatchNorm：每次把一列（1 个 feature）放在一个 mini-batch 里，均值变成 0， 方差变成 1 的标准化。</p>
-<p><img src="/2022/06/19/transfomer/137d2befec9350a5cddeaf2591eff2af142c170e.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049484.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>How：（该列向量 - mini-batch 该列向量的均值）/（mini - batch 该列向量的方差）</p>
 <p>训练时：mini-batch 计算均值；</p>
 <p>测试时：使用 全局 均值、方差。</p>
@@ -347,40 +347,45 @@
 <h2 id="LN"><a href="#LN" class="headerlink" title="LN"></a>LN</h2><p>LayerNorm 跟 BatchNorm 在很多时候几乎是一样的，除了实现的方法有点不一样之外。</p>
 <p>二维输入：</p>
 <p>LayerNorm：对每个样本做 Normalization（把每一行变成 均值为 0、方差为 1），不是对每个特征做 normalization。</p>
-<p><img src="/2022/06/19/transfomer/cd4ee7ceb31d8b206eb89528ba4117b28519808f.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h1 id="query、-key、-value"><a href="#query、-key、-value" class="headerlink" title="query、 key、 value"></a>query、 key、 value</h1><h2 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h2><img src="/2022/06/19/transfomer/image-20220624095211864.png" srcset="/img/loading.gif" lazyload alt="image-20220624095211864" style="zoom:50%;">
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049646.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h1 id="query、-key、-value"><a href="#query、-key、-value" class="headerlink" title="query、 key、 value"></a>query、 key、 value</h1><h2 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h2><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049600.png" srcset="/img/loading.gif" lazyload alt="image-20220624095211864" style="zoom:50%;" />
 
 <p>q在不同的位置，距离哪个v更近，权重也就更大，最后多个value加权</p>
-<h2 id="scale-dot-product-attention"><a href="#scale-dot-product-attention" class="headerlink" title="scale dot-product attention"></a>scale dot-product attention</h2><p><img src="/2022/06/19/transfomer/image-20220624095910139.png" srcset="/img/loading.gif" lazyload alt="image-20220624095910139"></p>
+<h2 id="scale-dot-product-attention"><a href="#scale-dot-product-attention" class="headerlink" title="scale dot-product attention"></a>scale dot-product attention</h2><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049448.png" srcset="/img/loading.gif" lazyload alt="image-20220624095910139" style="zoom:50%;" />
+
 <p>每一个q和v做内积，把它作为相似度，内积越大相似度越高，内积为0 向量正交，则没有相似度</p>
 <p>算出来之后再除以√dk，然后使用softmax函数来获得值的权重，就会得到n个非负的权重且相加等于1，将权重作用在value上得到输出</p>
 <p>绿色的每一行它就是 attention。attention 的计算：2次矩阵乘法、并行计算</p>
-<p><img src="/2022/06/19/transfomer/image-20220624101415141.png" srcset="/img/loading.gif" lazyload alt="image-20220624101415141"></p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049603.png" srcset="/img/loading.gif" lazyload alt="image-20220624101415141" style="zoom: 33%;" />
+
 <p>2 种常见的注意力机制：加性的注意力机制（它可以处理你的 query 和 key 不等长的情况，点积 dot-product 的注意力机制 （本文采用 scaled，➗ sqrt(dk) ），所以你可以看到它的名字它叫做 scale 的。</p>
 <p>选用 dot-product 原因：两种注意力机制其实都差不多， 点乘实现 简单、高效，两次矩阵乘法计算。</p>
-<p>​ scale dot-product 原因 ➗ sqrt(dk) ：防止softmax函数的梯度消失。</p>
-<p><img src="/2022/06/19/transfomer/image-20220624101015223.png" srcset="/img/loading.gif" lazyload alt="image-20220624101015223"></p>
-<p><img src="/2022/06/19/transfomer/image-20220624101043119.png" srcset="/img/loading.gif" lazyload alt="image-20220624101043119"></p>
+<p> scale dot-product 原因 ➗ sqrt(dk) ：防止softmax函数的梯度消失。</p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049516.png" srcset="/img/loading.gif" lazyload alt="image-20220624101015223" style="zoom:50%;" />
+
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049604.png" srcset="/img/loading.gif" lazyload alt="image-20220624101043119" style="zoom:50%;" />
+
 <p>当dk很大的时候(两个向量较长)，做点积值可能较大，相对的差距就会变大，最大的值做softmax更靠近于1，剩下那些值靠近于0，这样算梯度就会比较小。</p>
-<p>​ softmax：置信的地方尽量靠近1，不置信的地方靠近0，可收敛。这时候梯度就会变得比较小，那就会跑不动。</p>
+<p> softmax：置信的地方尽量靠近1，不置信的地方靠近0，可收敛。这时候梯度就会变得比较小，那就会跑不动。</p>
 <p><strong>图示：</strong></p>
-<img src="/2022/06/19/transfomer/image-20220624175003629.png" srcset="/img/loading.gif" lazyload alt="image-20220624175003629" style="zoom: 33%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049191.png" srcset="/img/loading.gif" lazyload alt="image-20220624175003629" style="zoom: 33%;" />
 
 <h2 id="如何做mask"><a href="#如何做mask" class="headerlink" title="如何做mask"></a>如何做mask</h2><p>避免在 t 时刻，看到 t 时刻以后的输入。</p>
 <p>在计算权重的时候，t 时刻只用了 v1, …, vt-1 的结果，不要用到 t 时刻以后的内容。</p>
 <p>把 t 时刻以后 Qt 和 Kt 的值换成一个很大的负数，如 1 ^ (-10)，进入 softmax 后，权重为0。 –&gt; 和 V 矩阵做矩阵乘法时，没看到 t 时刻以后的内容，只看 t 时刻之前的 key - value pair。</p>
 <p>理解：mask是个 0 1矩阵，和attention（scale QK）size一样，t 时刻以后 mask 为 0。</p>
-<h1 id="multihead"><a href="#multihead" class="headerlink" title="multihead"></a>multihead</h1><img src="/2022/06/19/transfomer/image-20220624175923794.png" srcset="/img/loading.gif" lazyload alt="image-20220624175923794" style="zoom: 33%;">
+<h1 id="multihead"><a href="#multihead" class="headerlink" title="multihead"></a>multihead</h1><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049392.png" srcset="/img/loading.gif" lazyload alt="image-20220624175923794" style="zoom: 33%;" />
 
 <p>多头原因：一个 dot product 的注意力里面，没有什么可以学的参数。具体函数就是内积，为了识别不一样的模式，希望有不一样的计算相似度的办法。</p>
 <p>加性 attention 有一个权重可学，也许能学到一些内容。</p>
 <p>本文的 dot-product attention，先投影到低维，投影的 w 是可以学习的。</p>
 <p>multi-head attention 给 h 次机会去学习 不一样的投影的方法，使得在投影进去的度量空间里面能够去匹配不同模式需要的一些相似函数，然后把 h 个 heads 拼接起来，最后再做一次投影。</p>
-<p><img src="/2022/06/19/transfomer/image-20220624180129309.png" srcset="/img/loading.gif" lazyload alt="image-20220624180129309"></p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049041.png" srcset="/img/loading.gif" lazyload alt="image-20220624180129309" style="zoom:50%;" />
+
 <p>每一个头 hi 是把 Q,K,V 通过 可以学习的 Wq, Wk, Wv 投影到 dv 上，再通过注意力函数，得到 head。  </p>
 <h1 id="注意力层的应用"><a href="#注意力层的应用" class="headerlink" title="注意力层的应用"></a>注意力层的应用</h1><h2 id="编码器"><a href="#编码器" class="headerlink" title="编码器"></a>编码器</h2><p>编码器的注意力层有输入为k、v、q</p>
 <p>==编码器最后一层的输出是n个长为d的向量==</p>
-<img src="/2022/06/19/transfomer/image-20220624180857750.png" srcset="/img/loading.gif" lazyload alt="image-20220624180857750" style="zoom:33%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272049141.png" srcset="/img/loading.gif" lazyload alt="image-20220624180857750" style="zoom:33%;" />
 
 <p>一个数据过来复制三份：即作为k、v也作为q，所以为<strong>自注意力机制</strong></p>
 <p>输入n个q，每个q拿到一个输出，会有n个输出，长度和v一样</p>
@@ -391,13 +396,13 @@
 <p>输出是 输入的加权和，其权重来自 每个向量与其它向量的相似度。</p>
 <p>multi-head 和 有投影的情况：</p>
 <p>学习 h 个不一样的距离空间，使得输出变化。</p>
-<img src="/2022/06/19/transfomer/image-20220624181836268.png" srcset="/img/loading.gif" lazyload alt="image-20220624181836268" style="zoom:33%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050258.png" srcset="/img/loading.gif" lazyload alt="image-20220624181836268" style="zoom:33%;" />
 
 <h2 id="解码器"><a href="#解码器" class="headerlink" title="解码器"></a>解码器</h2><p>mask：看不到t时刻以及之后时刻的输入，及权重为0</p>
-<img src="/2022/06/19/transfomer/image-20220624182114784.png" srcset="/img/loading.gif" lazyload alt="image-20220624182114784" style="zoom:33%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050083.png" srcset="/img/loading.gif" lazyload alt="image-20220624182114784" style="zoom:33%;" />
 
 <p><strong>decoder 的 multi-head attention 不再是自注意力</strong></p>
-<img src="/2022/06/19/transfomer/image-20220624182216941.png" srcset="/img/loading.gif" lazyload alt="image-20220624182216941" style="zoom:33%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050157.png" srcset="/img/loading.gif" lazyload alt="image-20220624182216941" style="zoom:33%;" />
 
 <p>query 是来自 decoder 里 masked multi-head attention 的输出。</p>
 <p><strong>编码器最后一层的输出是n个长为d的向量解码器最后输出为m个长为d的向量</strong></p>
@@ -409,7 +414,7 @@
 <p>图中<font color="#0000dd">蓝色</font>方块：decoder 的输出</p>
 <p>根据 query 算 输出： value 的加权和 （权重 取决于 红色方块 和 绿色方块 的相似度）</p>
 <p>第 3 个 attention 层，根据 query 去有效的提取 encoder 层输出</p>
-<img src="/2022/06/19/transfomer/image-20220624183158937.png" srcset="/img/loading.gif" lazyload alt="image-20220624183158937" style="zoom: 50%;">
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206272050310.png" srcset="/img/loading.gif" lazyload alt="image-20220624183158937" style="zoom: 50%;" />
 
 <p>eg： hello word –&gt;你好 世界</p>
 <p>计算 “好” 的时候，“好”作为 query ，会跟 “hello” 向量更相近一点，给 “hello” 向量一个比较大的权重。</p>
