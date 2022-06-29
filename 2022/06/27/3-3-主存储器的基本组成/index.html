@@ -16,12 +16,12 @@
   <meta name="author" content="yin-qiyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="主存储器 主存储器分为:存储体、MAR（memory address register）、MDR（memory data register)    存储体由存储单元构成 存储单元由存储元构成   存储体存放二进制01   字节和存储字的区别  字节：Byte 存储字：由硬件设计（如图存储字长为8）        数据传输   MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来">
+    <meta name="description" content="主存储器 主存储器分为:存储体、MAR（memory address register）、MDR（memory data register)    存储体由存储单元构成 存储单元由存储元构成   存储体存放二进制01  字节和存储字的区别  字节：Byte 存储字：由硬件设计（如图存储字长为8）    数据传输   MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来控制不同的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3.3 主存储器的基本组成">
 <meta property="og:url" content="http://example.com/2022/06/27/3-3-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="主存储器 主存储器分为:存储体、MAR（memory address register）、MDR（memory data register)    存储体由存储单元构成 存储单元由存储元构成   存储体存放二进制01   字节和存储字的区别  字节：Byte 存储字：由硬件设计（如图存储字长为8）        数据传输   MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来">
+<meta property="og:description" content="主存储器 主存储器分为:存储体、MAR（memory address register）、MDR（memory data register)    存储体由存储单元构成 存储单元由存储元构成   存储体存放二进制01  字节和存储字的区别  字节：Byte 存储字：由硬件设计（如图存储字长为8）    数据传输   MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来控制不同的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627224514900.png">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627231736586.png">
@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220628230511730.png">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220628234058348.png">
 <meta property="article:published_time" content="2022-06-27T14:39:26.000Z">
-<meta property="article:modified_time" content="2022-06-29T11:59:05.442Z">
+<meta property="article:modified_time" content="2022-06-29T14:37:24.956Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary_large_image">
@@ -310,7 +310,7 @@
 <p>存储单元由存储元构成</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627231736586.png" srcset="/img/loading.gif" lazyload alt="image-20220627231736586" style="zoom:25%;" />
 
-<p>存储体存放二进制01 </p>
+<p>存储体存放二进制01</p>
 <ul>
 <li>字节和存储字的区别</li>
 </ul>
@@ -318,16 +318,12 @@
 <p>存储字：由硬件设计（如图存储字长为8）</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627230931225.png" srcset="/img/loading.gif" lazyload alt="image-20220627230931225" style="zoom: 25%;" />
 
-
-
-
-
 <ul>
 <li><p>数据传输</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627232105448.png" srcset="/img/loading.gif" lazyload alt="image-20220627232105448" width="600" /></li>
 </ul>
 <p>MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来控制不同的自选线，读取对应存储单元的信息</p>
-<p>总容量 = 存储单元个数  * 存储字长 * =  2^3 * 8bit = 8 * 1Byte =8B</p>
+<p>总容量 = 存储单元个数  <em>存储字长</em> =  2^3 <em>8bit = 8</em> 1Byte =8B</p>
 <ul>
 <li>控制电路</li>
 </ul>
@@ -353,16 +349,10 @@
 <p>存储单元✖️存储字长</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627235034617.png" srcset="/img/loading.gif" lazyload alt="image-20220627235034617" style="zoom:25%;" />
 
-
-
-
-
 <ul>
 <li>寻址</li>
 </ul>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220627235355367.png" srcset="/img/loading.gif" lazyload alt="image-20220627235355367" style="zoom: 25%;" />
-
-
 
 <h1 id="⭐️SRAM（双稳态触发器）和DRAM（栅极电容）"><a href="#⭐️SRAM（双稳态触发器）和DRAM（栅极电容）" class="headerlink" title="⭐️SRAM（双稳态触发器）和DRAM（栅极电容）"></a>⭐️SRAM（双稳态触发器）和DRAM（栅极电容）</h1><ul>
 <li>Dynamic Random Access Memory（动态）</li>
@@ -414,7 +404,7 @@
 </ul>
 <p>1：a高电平b低电平</p>
 <p>0：a低电平b高电平</p>
-<p><strong>读数据</strong>    </p>
+<p><strong>读数据</strong> </p>
 <p>两根数据线读1</p>
 <p>当给自选择线接通5V电压时候，blx输出低电平信号，如果本身存储0，BL输出低电平信号，右边无信号</p>
 <h2 id="DRAM刷新"><a href="#DRAM刷新" class="headerlink" title="DRAM刷新"></a>DRAM刷新</h2><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220628132200218.png" srcset="/img/loading.gif" lazyload alt="image-20220628132200218" style="zoom: 25%;" />
@@ -422,8 +412,6 @@
 <p>双译码器选通线数量为<strong>2^n/2^+2^n/2^</strong>根</p>
 <p>如： 单译码器：2^8^=256，双译码器2^4^+2^4^=32</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220628194349808.png" srcset="/img/loading.gif" lazyload alt="image-20220628194349808" style="zoom: 25%;" />
-
-
 
 <h3 id="刷新方法"><a href="#刷新方法" class="headerlink" title="刷新方法"></a>刷新方法</h3><p>题目中没说刷新周期，默认2ms</p>
 <ol>
@@ -441,13 +429,9 @@
 </ol>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220628230023692.png" srcset="/img/loading.gif" lazyload alt="image-20220628230023692" style="zoom:33%;" />
 
-
-
 <h2 id="DRAM地址线复用技术"><a href="#DRAM地址线复用技术" class="headerlink" title="DRAM地址线复用技术"></a>DRAM地址线复用技术</h2><p> 使用n/2条地址线分别将行地址和列地址送入缓冲器</p>
 <p>行列地址分两次送，可以使地址线更少，芯片引脚更少</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/image-20220628230511730.png" srcset="/img/loading.gif" lazyload alt="image-20220628230511730" style="zoom:25%;" />
-
-
 
 <p><strong>如今储存采用</strong>SDRAM：DDR3、DDR4</p>
 <h1 id="只读存储器ROM（Read-Only-Memory）"><a href="#只读存储器ROM（Read-Only-Memory）" class="headerlink" title="只读存储器ROM（Read Only Memory）"></a>只读存储器ROM（Read Only Memory）</h1><p>MROM–掩模式只读存储器 <strong>任何人不可重写</strong></p>

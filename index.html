@@ -233,7 +233,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2022/06/28/3-4-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5/" target="_self">
         <div>
-          单块存储芯片与cpu的连接MDR连接的数据总线（宽度&#x3D;存储字长） 控制电路的片选线、度控制线、写控制线 译码器的地址总线 扩展存储芯片的输入输出信号地址线：A 数据线：D 片选线：CS或者CE（头上有线低电平有效，无线高电平有效） 读写控制线：WE 或WR（低电平写，高电平读） ​                    也可能分开为WE和OE两根线读写
+          单块存储芯片与cpu的连接MDR连接的数据总线（宽度&#x3D;存储字长） 控制电路的片选线、度控制线、写控制线 译码器的地址总线 扩展存储芯片的输入输出信号地址线：A 数据线：D 片选线：CS或者CE（头上有线低电平有效，无线高电平有效） 读写控制线：WE（write enable） 或WR（read）（低电平写，高电平读） ​     也可能分开为WE和OE两根线读写 位扩展-增加主存的存储字长
         </div>
       </a>
 
@@ -308,7 +308,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2022/06/27/3-3-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/" target="_self">
         <div>
-          主存储器 主存储器分为:存储体、MAR（memory address register）、MDR（memory data register)    存储体由存储单元构成 存储单元由存储元构成   存储体存放二进制01   字节和存储字的区别  字节：Byte 存储字：由硬件设计（如图存储字长为8）        数据传输   MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来
+          主存储器 主存储器分为:存储体、MAR（memory address register）、MDR（memory data register)    存储体由存储单元构成 存储单元由存储元构成   存储体存放二进制01  字节和存储字的区别  字节：Byte 存储字：由硬件设计（如图存储字长为8）    数据传输   MAR地址寄存器存储n位地址（意味着有2^n存储单元），分别给高低电平来控制不同的
         </div>
       </a>
 
