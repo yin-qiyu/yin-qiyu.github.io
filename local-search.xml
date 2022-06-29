@@ -8,7 +8,7 @@
     <link href="/2022/06/28/3-4-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5/"/>
     <url>/2022/06/28/3-4-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8ECPU%E7%9A%84%E8%BF%9E%E6%8E%A5/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="单块存储芯片与cpu的连接"><a href="#单块存储芯片与cpu的连接" class="headerlink" title="单块存储芯片与cpu的连接"></a>单块存储芯片与cpu的连接</h1><p>MDR连接的数据总线（宽度=存储字长）</p><p>控制电路的片选线、度控制线、写控制线</p><p>译码器的地址总线</p><h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="存储芯片的输入输出信号"><a href="#存储芯片的输入输出信号" class="headerlink" title="存储芯片的输入输出信号"></a>存储芯片的输入输出信号</h2><p>地址线：A</p><p>数据线：D</p><p>片选线：CS或者CE（头上有线低电平有效，无线高电平有效）</p><p>读写控制线：WE 或WR（低电平写，高电平读）</p><p>​                    也可能分开为WE和OE两根线读写</p>]]></content>
     
     
     <categories>
@@ -33,7 +33,7 @@
   
   
   <entry>
-    <title>3.3.3 主存储器的基本组成</title>
+    <title>3.3 主存储器的基本组成</title>
     <link href="/2022/06/27/3-3-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/"/>
     <url>/2022/06/27/3-3-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</url>
     
