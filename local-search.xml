@@ -4,11 +4,40 @@
   
   
   <entry>
+    <title>3.6 Cache</title>
+    <link href="/2022/07/03/3-6-Cache/"/>
+    <url>/2022/07/03/3-6-Cache/</url>
+    
+    <content type="html"><![CDATA[<p>cashe集成在cpu内部通常有sram实现，速度快，成本高</p><h1 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032211395.png" alt="image-20220703221158366"></p><h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><p>平均访问时间：</p><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032214130.png" alt="image-20220703221444102"></p><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032224595.png" alt="image-20220703222408555"></p><h2 id="有待解决问题"><a href="#有待解决问题" class="headerlink" title="有待解决问题"></a>有待解决问题</h2><p>分块</p><p>每次被访问的主存快一定会被立即调入cache</p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032311284.png" alt="image-20220703231120242" style="zoom:33%;" /><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032312080.png" alt="image-20220703231216053"></p><p>小结：</p><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032320592.png" alt="image-20220703232034550"></p><h1 id="Cache和主存的映射方式"><a href="#Cache和主存的映射方式" class="headerlink" title="Cache和主存的映射方式"></a><strong>Cache和主存的映射方式</strong></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>408</category>
+      
+      <category>计算机组成原理</category>
+      
+      <category>第三章存储系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机组成原理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>3.5 双端口RAM和多模块存储技术</title>
     <link href="/2022/06/30/3-5-%E5%8F%8C%E7%AB%AF%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/"/>
     <url>/2022/06/30/3-5-%E5%8F%8C%E7%AB%AF%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF/</url>
     
-    <content type="html"><![CDATA[<h1 id="双端口ram"><a href="#双端口ram" class="headerlink" title="双端口ram"></a>双端口ram</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206301847681.png" alt="image-20220630184718657"></p><h1 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h1><ul><li><p>高位低位交叉</p><p>上一个存储体完成＋r=下一个存储体的完成时间</p></li></ul><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206301905662.png" alt="image-20220630190557636"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="双端口ram"><a href="#双端口ram" class="headerlink" title="双端口ram"></a>双端口ram</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206301847681.png" alt="image-20220630184718657"></p><h1 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h1><ul><li><p>高位低位交叉</p><p>上一个存储体完成＋r=下一个存储体的完成时间</p></li></ul><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202206301905662.png" alt="image-20220630190557636"></p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207031953954.png" alt="image-20220703195302898" style="zoom:33%;" /><p><strong>两种问法：</strong></p><p><strong>1.<font color='red'>存取时间为r</font></strong></p><p><strong>2.<font color='red'>总线传输周期为r</font></strong></p><p>完美衔接：m=T/r</p><p>存取流水线效率最高，存储体数量最少成本最低</p><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207031953091.png" alt="image-20220703195338053"></p><ul><li>给定一个存储体x，判断是第几个存储体</li></ul><ol><li>看地址末尾两个数字</li><li>x%m</li></ol><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032000458.png" alt="image-20220703200022415"></p><h1 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032001735.png" alt="image-20220703200106684"></p><p>灵活性差一些</p><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032008073.png" alt="image-20220703200821019"></p>]]></content>
     
     
     <categories>
