@@ -102,6 +102,8 @@
       
       <category>note</category>
       
+      <category>jetson</category>
+      
     </categories>
     
     
@@ -208,6 +210,8 @@
       
       <category>note</category>
       
+      <category>jetson</category>
+      
     </categories>
     
     
@@ -232,6 +236,8 @@
     <categories>
       
       <category>note</category>
+      
+      <category>jetson</category>
       
     </categories>
     
@@ -261,6 +267,8 @@
     <categories>
       
       <category>note</category>
+      
+      <category>jetson</category>
       
     </categories>
     
