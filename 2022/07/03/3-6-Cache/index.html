@@ -16,12 +16,12 @@
   <meta name="author" content="yin-qiyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="cashe集成在cpu内部通常有sram实现，速度快，成本高 空间局部性 性能分析平均访问时间：   有待解决问题分块 每次被访问的主存快一定会被立即调入cache    小结：  Cache和主存的映射方式">
+    <meta name="description" content="cashe集成在cpu内部通常有sram实现，速度快，成本高 空间局部性局部性原理局部性原理是指CPU访问存储器时，无论是存取指令还是存取数据，所访问的存储单元都趋于聚集在一个较小的连续区域中。  性能分析平均访问时间：   有待解决问题根据主存空间地址大小和chache块来划分主存块号和块内地址 若chace总块数为2^n^，则主存块号末尾n位直接反应他在cache中的位置 每次被访问的主存快一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3.6 Cache">
 <meta property="og:url" content="http://example.com/2022/07/03/3-6-Cache/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="cashe集成在cpu内部通常有sram实现，速度快，成本高 空间局部性 性能分析平均访问时间：   有待解决问题分块 每次被访问的主存快一定会被立即调入cache    小结：  Cache和主存的映射方式">
+<meta property="og:description" content="cashe集成在cpu内部通常有sram实现，速度快，成本高 空间局部性局部性原理局部性原理是指CPU访问存储器时，无论是存取指令还是存取数据，所访问的存储单元都趋于聚集在一个较小的连续区域中。  性能分析平均访问时间：   有待解决问题根据主存空间地址大小和chache块来划分主存块号和块内地址 若chace总块数为2^n^，则主存块号末尾n位直接反应他在cache中的位置 每次被访问的主存快一">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032211395.png">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032214130.png">
@@ -29,8 +29,23 @@
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032311284.png">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032312080.png">
 <meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032320592.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041037274.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041038923.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041041193.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041057784.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041103627.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041126944.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041137874.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041144182.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041146774.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041152127.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041243093.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041247796.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041249419.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041314759.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041417521.png">
 <meta property="article:published_time" content="2022-07-03T12:14:51.000Z">
-<meta property="article:modified_time" content="2022-07-03T15:23:00.321Z">
+<meta property="article:modified_time" content="2022-07-04T06:29:37.937Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary_large_image">
@@ -260,18 +275,60 @@
               <div class="markdown-body">
                 
                 <p>cashe集成在cpu内部通常有sram实现，速度快，成本高</p>
-<h1 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032211395.png" srcset="/img/loading.gif" lazyload alt="image-20220703221158366"></p>
+<h1 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h1><h2 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a><a id="1">局部性原理</a></h2><p>局部性原理是指CPU访问<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%98%E5%82%A8%E5%99%A8/1583185">存储器</a>时，无论是存取指令还是存取数据，所访问的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83/8727749">存储单元</a>都趋于聚集在一个较小的连续区域中。</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032211395.png" srcset="/img/loading.gif" lazyload alt="image-20220703221158366"></p>
 <h2 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h2><p>平均访问时间：</p>
 <p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032214130.png" srcset="/img/loading.gif" lazyload alt="image-20220703221444102"></p>
 <p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032224595.png" srcset="/img/loading.gif" lazyload alt="image-20220703222408555"></p>
-<h2 id="有待解决问题"><a href="#有待解决问题" class="headerlink" title="有待解决问题"></a>有待解决问题</h2><p>分块</p>
+<h2 id="有待解决问题"><a href="#有待解决问题" class="headerlink" title="有待解决问题"></a>有待解决问题</h2><p><strong>根据主存空间地址大小和chache块来划分主存块号和块内地址</strong></p>
+<p><strong>若chace总块数为2^n^，则主存块号末尾n位直接反应他在cache中的位置</strong></p>
 <p>每次被访问的主存快一定会被立即调入cache</p>
 <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032311284.png" srcset="/img/loading.gif" lazyload alt="image-20220703231120242" style="zoom:33%;" />
 
 <p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032312080.png" srcset="/img/loading.gif" lazyload alt="image-20220703231216053"></p>
 <p>小结：</p>
 <p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207032320592.png" srcset="/img/loading.gif" lazyload alt="image-20220703232034550"></p>
-<h1 id="Cache和主存的映射方式"><a href="#Cache和主存的映射方式" class="headerlink" title="Cache和主存的映射方式"></a><strong>Cache和主存的映射方式</strong></h1>
+<h1 id="Cache和主存的映射方式"><a href="#Cache和主存的映射方式" class="headerlink" title="Cache和主存的映射方式"></a><strong>Cache和主存的映射方式</strong></h1><ul>
+<li>全相联映射方式</li>
+</ul>
+<p>主存快放到cache的任意位置</p>
+<ul>
+<li>直接映射</li>
+</ul>
+<p>每个主存快只能放到一个特定的位置</p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041037274.png" srcset="/img/loading.gif" lazyload alt="image-20220704103729225" style="zoom:50%;" />
+
+<p>直接截取主存快地址中主存块号的后几位就是主存快在cache中的位置</p>
+<ul>
+<li>组相联映射</li>
+</ul>
+<p>所属分组=主存块号%分组数</p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041038923.png" srcset="/img/loading.gif" lazyload alt="image-20220704103851884" style="zoom:33%;" />
+
+
+
+<h2 id="有效位和标记位"><a href="#有效位和标记位" class="headerlink" title="有效位和标记位"></a>有效位和标记位</h2><p>标记位是主存块号</p>
+<p>有效位为0无数据，为1有数据</p>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041041193.png" srcset="/img/loading.gif" lazyload alt="image-20220704104145160" style="zoom:25%;" />
+
+<h2 id="全相联映射方式"><a href="#全相联映射方式" class="headerlink" title="全相联映射方式"></a>全相联映射方式</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041057784.png" srcset="/img/loading.gif" lazyload alt="image-20220704105736737"></p>
+<h2 id="直接联映射方式"><a href="#直接联映射方式" class="headerlink" title="直接联映射方式"></a>直接联映射方式</h2><p>缺点：其他有空闲cahce块但可能不能使用</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041103627.png" srcset="/img/loading.gif" lazyload alt="image-20220704110313584"></p>
+<p>可优化后n（n为chache总块数2^n^中的n）位</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041126944.png" srcset="/img/loading.gif" lazyload alt="image-20220704112612886"></p>
+<h3 id="如何访存"><a href="#如何访存" class="headerlink" title="如何访存"></a>如何访存</h3><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041137874.png" srcset="/img/loading.gif" lazyload alt="image-20220704113735797"></p>
+<h2 id="组相联映射（可放到特定分组）"><a href="#组相联映射（可放到特定分组）" class="headerlink" title="组相联映射（可放到特定分组）"></a>组相联映射（可放到特定分组）</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041144182.png" srcset="/img/loading.gif" lazyload alt="image-20220704114430095"></p>
+<h3 id="如何访存-1"><a href="#如何访存-1" class="headerlink" title="如何访存"></a>如何访存</h3><p> <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041146774.png" srcset="/img/loading.gif" lazyload alt="image-20220704114646666"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041152127.png" srcset="/img/loading.gif" lazyload alt="image-20220704115240022"></p>
+<h1 id="Cache替换算法"><a href="#Cache替换算法" class="headerlink" title="Cache替换算法"></a><strong>Cache替换算法</strong></h1><h2 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h2><p>抖动现象：频繁进出</p>
+<h2 id="LRU近期最少使用（Least-Recently-Used）"><a href="#LRU近期最少使用（Least-Recently-Used）" class="headerlink" title="LRU近期最少使用（Least Recently Used）"></a>LRU近期最少使用（Least Recently Used）</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041243093.png" srcset="/img/loading.gif" lazyload alt="image-20220704124354988"></p>
+<p>机器实现</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041247796.png" srcset="/img/loading.gif" lazyload alt="image-20220704124723713"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041249419.png" srcset="/img/loading.gif" lazyload alt="image-20220704124904349"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041314759.png" srcset="/img/loading.gif" lazyload alt="image-20220704131410655"></p>
+<h2 id="LFU-frequently最近不经常使用）least-frequently-used"><a href="#LFU-frequently最近不经常使用）least-frequently-used" class="headerlink" title="LFU(frequently最近不经常使用）least frequently used"></a>LFU(frequently最近不经常使用）least frequently used</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041417521.png" srcset="/img/loading.gif" lazyload alt="image-20220704141705387"></p>
+<p>LFU-曾经经常被访问的主存块在未来不一定会通道（如微信聊天相关的块），并没有很好的遵循<a href="#1">局部性原理</a>  ，因此实际运行效果不如LRU</p>
+
                 
               </div>
             
@@ -349,7 +406,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>July 3, 2022</div>
+          <div>July 4, 2022</div>
         </div>
       
       <div class="license-meta-item">
