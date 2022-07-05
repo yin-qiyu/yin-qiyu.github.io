@@ -16,29 +16,35 @@
   <meta name="author" content="yin-qiyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content=":star:机组和操作系统总和考点 页式存储 页表逻辑地址-&gt;物理地址  因为页表数据在主存里，所以访问页表会进行一次访存操作  地址转换过程   将 近期访问的页表项放入更高速的存储器，可以加快地址变换的速度，类似于把某一个主存块放到更快速的cache里面 快表（TLB）快表采用的SRAM，慢表&#x2F;页表存储在主存内DRAM 快表是一种“相联存储器”，可以按内容寻访  关联存储器（相联存储器）">
+    <meta name="description" content="磁盘存储器  性能指标  越靠近内密度越高，越靠外，密度越低  平均存储时间   若没有给出明确的旋转延迟时间，算半圈  磁盘地址   磁盘阵列  raid0- 无容错能力    raid1- 镜像磁盘阵列-容量减少一半 Raid2-采用海明码的磁盘阵列      :star:新考点固态硬盘考点： 读写性能、磨损均衡技术   固态硬盘(SSD)是一种基于闪存技术的存储器。它与U 盘并没有本质上的差">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.7 虚拟存储器">
-<meta property="og:url" content="http://example.com/2022/07/04/3-7-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/index.html">
+<meta property="og:title" content="外部存储器">
+<meta property="og:url" content="http://example.com/2022/07/05/%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content=":star:机组和操作系统总和考点 页式存储 页表逻辑地址-&gt;物理地址  因为页表数据在主存里，所以访问页表会进行一次访存操作  地址转换过程   将 近期访问的页表项放入更高速的存储器，可以加快地址变换的速度，类似于把某一个主存块放到更快速的cache里面 快表（TLB）快表采用的SRAM，慢表&#x2F;页表存储在主存内DRAM 快表是一种“相联存储器”，可以按内容寻访  关联存储器（相联存储器）">
+<meta property="og:description" content="磁盘存储器  性能指标  越靠近内密度越高，越靠外，密度越低  平均存储时间   若没有给出明确的旋转延迟时间，算半圈  磁盘地址   磁盘阵列  raid0- 无容错能力    raid1- 镜像磁盘阵列-容量减少一半 Raid2-采用海明码的磁盘阵列      :star:新考点固态硬盘考点： 读写性能、磨损均衡技术   固态硬盘(SSD)是一种基于闪存技术的存储器。它与U 盘并没有本质上的差">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041929172.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042040632.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042045329.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042121895.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042244222.png">
-<meta property="article:published_time" content="2022-07-04T07:59:08.000Z">
-<meta property="article:modified_time" content="2022-07-05T05:10:57.863Z">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051335014.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051337128.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051338854.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051341854.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051346158.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051401118.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051410670.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051408748.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051411918.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051451049.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051418157.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051435808.png">
+<meta property="article:published_time" content="2022-07-05T05:15:21.000Z">
+<meta property="article:modified_time" content="2022-07-05T06:54:51.072Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="计算机组成原理">
-<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041929172.png">
+<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051335014.png">
   
   
   
-  <title>3.7 虚拟存储器 - Hexo</title>
+  <title>外部存储器 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="3.7 虚拟存储器"></span>
+            <span id="subtitle" data-typed-text="外部存储器"></span>
           
         </div>
 
@@ -252,31 +258,49 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">3.7 虚拟存储器</h1>
+            <h1 style="display: none">外部存储器</h1>
             
             
               <div class="markdown-body">
                 
-                <p>:star:机组和操作系统总和考点</p>
-<h1 id="页式存储"><a href="#页式存储" class="headerlink" title="页式存储"></a>页式存储</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207041929172.png" srcset="/img/loading.gif" lazyload alt="image-20220704192940126"></p>
-<h2 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h2><p>逻辑地址-&gt;物理地址</p>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042040632.png" srcset="/img/loading.gif" lazyload alt="image-20220704204005601"></p>
-<p>因为页表数据在主存里，所以访问页表会进行一次访存操作</p>
+                <h1 id="磁盘存储器"><a href="#磁盘存储器" class="headerlink" title="磁盘存储器"></a>磁盘存储器</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051335014.png" srcset="/img/loading.gif" lazyload alt="image-20220705133524939"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051337128.png" srcset="/img/loading.gif" lazyload alt="image-20220705133712090"></p>
+<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051338854.png" srcset="/img/loading.gif" lazyload alt="image-20220705133807808"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051341854.png" srcset="/img/loading.gif" lazyload alt="image-20220705134132820"></p>
+<p>越靠近内密度越高，越靠外，密度越低</p>
 <ul>
-<li>地址转换过程</li>
+<li>平均存储时间</li>
 </ul>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042045329.png" srcset="/img/loading.gif" lazyload alt="image-20220704204542303"></p>
-<p>将 <strong>近期访问的页表项放入更高速的存储器</strong>，可以加快地址变换的速度，类似于把某一个主存块放到更快速的cache里面</p>
-<h2 id="快表（TLB）"><a href="#快表（TLB）" class="headerlink" title="快表（TLB）"></a>快表（TLB）</h2><p>快表采用的SRAM，慢表/页表存储在主存内DRAM</p>
-<p>快表是一种“<strong>相联存储器</strong>”，可以按内容寻访</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%B3%E8%81%94/165901">关联</a>存储器（相联存储器），是一种不根据地址而是根据存储内容来进行存取的存储器，可以实现快速地查找<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BF%AB%E8%A1%A8/19781679">快表</a>。既可以按照地址寻址也可以按照内容寻址（通常是某些字段），为了与传统寄存器作区别，称为按内容寻址的存储器。写入信息时按顺序写入，不需要地址。</p>
-</blockquote>
-<h3 id="块表和cache的区别"><a href="#块表和cache的区别" class="headerlink" title="块表和cache的区别"></a>块表和cache的区别</h3><p>:star:cache存放的是主存块的数据副本，一整块一整块往cache里面调用，访问物理地址更快</p>
-<p>:star:块表中存储的是页表项的副本，减少一次访存，加快逻辑地址到物理地址转换速度</p>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042121895.png" srcset="/img/loading.gif" lazyload alt="image-20220704212158861"></p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207042244222.png" srcset="/img/loading.gif" lazyload alt="image-20220704224428140"></p>
-<h1 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h1>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051346158.png" srcset="/img/loading.gif" lazyload alt="image-20220705134616113"></p>
+<p>若没有给出明确的旋转延迟时间，算半圈</p>
+<ul>
+<li>磁盘地址</li>
+</ul>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051401118.png" srcset="/img/loading.gif" lazyload alt="image-20220705140104076"></p>
+<h2 id="磁盘阵列"><a href="#磁盘阵列" class="headerlink" title="磁盘阵列"></a>磁盘阵列</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051410670.png" srcset="/img/loading.gif" lazyload alt="image-20220705141015628"></p>
+<ul>
+<li>raid0- <font color='yellow'>无容错能力</font></li>
+</ul>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051408748.png" srcset="/img/loading.gif" lazyload alt="image-20220705140857691"></p>
+<ul>
+<li>raid1- 镜像磁盘阵列-<font color='yellow'>容量减少一半</font></li>
+<li>Raid2-采用海明码的磁盘阵列</li>
+</ul>
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051411918.png" srcset="/img/loading.gif" lazyload alt="image-20220705141145854" style="zoom:33%;" />
+
+
+
+<h1 id="star-新考点固态硬盘"><a href="#star-新考点固态硬盘" class="headerlink" title=":star:新考点固态硬盘"></a>:star:<font color='red'>新考点</font>固态硬盘</h1><h2 id="考点：-读写性能、磨损均衡技术"><a href="#考点：-读写性能、磨损均衡技术" class="headerlink" title="考点： 读写性能、磨损均衡技术"></a>考点： 读写性能、磨损均衡技术</h2><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051451049.png" srcset="/img/loading.gif" lazyload alt="image-20220705145108997" style="zoom:50%;" />
+
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051418157.png" srcset="/img/loading.gif" lazyload alt="image-20220705141822087"></p>
+<p>固态硬盘(SSD)是一种基于闪存技术的存储器。它与U 盘并没有本质上的差别，只是容 量更大，存取性能更好。一个SSD由一个或多个闪存芯片和闪存翻译层组成，闪存芯片替代传 统旋转磁盘中的机械驱动器，而闪存翻译层将来自CPU的逻辑块读写请求翻译成对底层物理设 备的读写控制信号，因此，这个闪存翻译层相当于扮演了磁盘控制器的角色。</p>
+<p>如图3.15所示，一个闪存由B 块组成，每块由P 页组成。通常，页的大小是512B〜 4KB, 每块由32〜 128页组成，块的大小为16KB〜 512KB。数据是以页为单位读写的。只有在一页所 属的块整个被擦除后，才能写这一页。不过，一旦一个块被擦除，块中的每个页都可以直接再 写一次。某个块进行了约10万次重复写之后，就会磨损坏，不能再使用。</p>
+<p>随机写很慢，有两个原因。首先，擦除块比较慢，1ms级，比访问页高一个数量级。其 次，如果写操作试图修改一个包含已有数据的页尺，那么这个块中所有含有用数据的页都必须 被复制到一个新(擦除过的)块中，才能进行对页尺的写。</p>
+<p>比起传统磁盘，SSD有很多优点，它由半导体存储器构成，没有移动的部件，因而随机访 问时间比机械磁盘要快很多，也没有任何机械噪声和震动，能耗更低，抗震性好，安全性高等。不过，SSD也有缺点，因为反复写之后，闪存块会磨损，所以SSD也容易磨损。闪存翻译</p>
+<p>层中有一个平均磨损逻辑试图通过将擦除平均分布在所有的块上来最大化每个块的寿命。实际 上，平均磨损逻辑处理得非常好，要很多年SSD才会磨损坏。</p>
+<h2 id="读写"><a href="#读写" class="headerlink" title="读写"></a>读写</h2><p>固态硬盘读写以页为单位，固态的一个页相当于磁盘的一个扇区，固态的一个块相当于磁盘的一个磁道，一个磁道包含多个扇区</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051435808.png" srcset="/img/loading.gif" lazyload alt="image-20220705143544737"></p>
+
                 
               </div>
             
@@ -325,8 +349,6 @@
       
         <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">#计算机组成原理</a>
       
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
-      
     </div>
   
 </div>
@@ -337,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>3.7 虚拟存储器</div>
-      <div>http://example.com/2022/07/04/3-7-虚拟存储器/</div>
+      <div>外部存储器</div>
+      <div>http://example.com/2022/07/05/外部存储器/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 4, 2022</div>
+          <div>July 5, 2022</div>
         </div>
       
       
@@ -385,9 +407,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/05/%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8/" title="外部存储器">
+                      <a href="/2022/07/05/4-1-%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/" title="4.1 指令格式">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">外部存储器</span>
+                        <span class="hidden-mobile">4.1 指令格式</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -395,8 +417,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/03/3-6-Cache/" title="3.6 Cache">
-                        <span class="hidden-mobile">3.6 Cache</span>
+                      <a href="/2022/07/04/3-7-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/" title="3.7 虚拟存储器">
+                        <span class="hidden-mobile">3.7 虚拟存储器</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
