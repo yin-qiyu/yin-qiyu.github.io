@@ -16,16 +16,29 @@
   <meta name="author" content="yin-qiyu">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="指令分类零地址指令 一地址指令 二地址指令 三地址指令 四地址指令 按指令长度分类 操作码指令分类定长操作码 可变长操作码   操作类型 扩展操作码 设地址长度为n，上一层留出m种状态，下一层可以扩展出m×2^n^种状态  总结">
+<meta property="og:type" content="article">
 <meta property="og:title" content="4.1 指令格式">
 <meta property="og:url" content="http://example.com/2022/07/05/4-1-%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="指令分类零地址指令 一地址指令 二地址指令 三地址指令 四地址指令 按指令长度分类 操作码指令分类定长操作码 可变长操作码   操作类型 扩展操作码 设地址长度为n，上一层留出m种状态，下一层可以扩展出m×2^n^种状态  总结">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071841341.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071834415.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071835439.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071835915.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071840990.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071843767.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072033637.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072034945.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072135386.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072136868.png">
 <meta property="article:published_time" content="2022-07-05T06:54:46.000Z">
-<meta property="article:modified_time" content="2022-07-05T06:55:34.731Z">
+<meta property="article:modified_time" content="2022-07-07T13:36:54.708Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071841341.png">
   
   
   
@@ -248,7 +261,20 @@
             
               <div class="markdown-body">
                 
-                
+                <h1 id="指令分类"><a href="#指令分类" class="headerlink" title="指令分类"></a>指令分类</h1><h2 id="零地址指令"><a href="#零地址指令" class="headerlink" title="零地址指令"></a>零地址指令</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071841341.png" srcset="/img/loading.gif" lazyload alt="image-20220707184146290"></p>
+<h2 id="一地址指令"><a href="#一地址指令" class="headerlink" title="一地址指令"></a>一地址指令</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071834415.png" srcset="/img/loading.gif" lazyload alt="image-20220707183424345"></p>
+<h2 id="二地址指令"><a href="#二地址指令" class="headerlink" title="二地址指令"></a>二地址指令</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071835439.png" srcset="/img/loading.gif" lazyload alt="image-20220707183515397"></p>
+<h2 id="三地址指令"><a href="#三地址指令" class="headerlink" title="三地址指令"></a>三地址指令</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071835915.png" srcset="/img/loading.gif" lazyload alt="image-20220707183530882"></p>
+<h2 id="四地址指令"><a href="#四地址指令" class="headerlink" title="四地址指令"></a>四地址指令</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071840990.png" srcset="/img/loading.gif" lazyload alt="image-20220707184022952"></p>
+<h2 id="按指令长度分类"><a href="#按指令长度分类" class="headerlink" title="按指令长度分类"></a>按指令长度分类</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207071843767.png" srcset="/img/loading.gif" lazyload alt="image-20220707184330727"></p>
+<h2 id="操作码指令分类"><a href="#操作码指令分类" class="headerlink" title="操作码指令分类"></a>操作码指令分类</h2><p>定长操作码</p>
+<p>可变长操作码</p>
+<p> <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072033637.png" srcset="/img/loading.gif" lazyload alt="image-20220707203333593"></p>
+<h2 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072034945.png" srcset="/img/loading.gif" lazyload alt="image-20220707203400906"></p>
+<h1 id="扩展操作码"><a href="#扩展操作码" class="headerlink" title="扩展操作码"></a>扩展操作码</h1><p> <strong>设地址长度为n，上一层留出m种状态，下一层可以扩展出m×2^n^种状态</strong></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072135386.png" srcset="/img/loading.gif" lazyload alt="image-20220707213558337"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072136868.png" srcset="/img/loading.gif" lazyload alt="image-20220707213650819"></p>
+
                 
               </div>
             
@@ -326,7 +352,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>July 5, 2022</div>
+          <div>July 7, 2022</div>
         </div>
       
       <div class="license-meta-item">
@@ -354,6 +380,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/07/4-2-%E6%8C%87%E4%BB%A4%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" title="4.2 指令寻址方式">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">4.2 指令寻址方式</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

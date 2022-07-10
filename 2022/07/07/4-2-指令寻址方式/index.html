@@ -16,35 +16,45 @@
   <meta name="author" content="yin-qiyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="磁盘存储器  性能指标  越靠近内密度越高，越靠外，密度越低  平均存储时间   若没有给出明确的旋转延迟时间，算半圈  磁盘地址   磁盘阵列  raid0- 无容错能力    raid1- 镜像磁盘阵列-容量减少一半 Raid2-采用海明码的磁盘阵列    ☆新考点固态硬盘考点： 读写性能、磨损均衡技术   固态硬盘(SSD)是一种基于闪存技术的存储器。它与U 盘并没有本质上的差别，只是容 量">
+    <meta name="description" content="顺序寻址+1不是真正的+1，是当前指令的字长，根据指令长度，编址方式不同  跳跃指令     数据寻址直接寻址 间接寻址间接寻址是相对于直接寻址而言的，指令的地址字段给出的形式地址不是操作数的真正地 址，而是操作数有效地址所在的存储单元的地址，也就是操作数地址的地址，即EA &#x3D; (A)   寄存器寻址   隐含寻址 立即寻址这种类型的指令的地址字段指出的不是操作数的地址，而是操作数本身，又称立即">
 <meta property="og:type" content="article">
-<meta property="og:title" content="外部存储器">
-<meta property="og:url" content="http://example.com/2022/07/05/%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8/index.html">
+<meta property="og:title" content="4.2 指令寻址方式">
+<meta property="og:url" content="http://example.com/2022/07/07/4-2-%E6%8C%87%E4%BB%A4%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="磁盘存储器  性能指标  越靠近内密度越高，越靠外，密度越低  平均存储时间   若没有给出明确的旋转延迟时间，算半圈  磁盘地址   磁盘阵列  raid0- 无容错能力    raid1- 镜像磁盘阵列-容量减少一半 Raid2-采用海明码的磁盘阵列    ☆新考点固态硬盘考点： 读写性能、磨损均衡技术   固态硬盘(SSD)是一种基于闪存技术的存储器。它与U 盘并没有本质上的差别，只是容 量">
+<meta property="og:description" content="顺序寻址+1不是真正的+1，是当前指令的字长，根据指令长度，编址方式不同  跳跃指令     数据寻址直接寻址 间接寻址间接寻址是相对于直接寻址而言的，指令的地址字段给出的形式地址不是操作数的真正地 址，而是操作数有效地址所在的存储单元的地址，也就是操作数地址的地址，即EA &#x3D; (A)   寄存器寻址   隐含寻址 立即寻址这种类型的指令的地址字段指出的不是操作数的地址，而是操作数本身，又称立即">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051335014.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051337128.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051338854.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051341854.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051346158.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051401118.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051410670.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051408748.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051411918.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051451049.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051418157.png">
-<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051435808.png">
-<meta property="article:published_time" content="2022-07-05T05:15:21.000Z">
-<meta property="article:modified_time" content="2022-07-05T09:48:34.024Z">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072205143.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072212778.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072213225.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102132801.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102133019.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102139655.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102145614.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102145827.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102146201.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102147108.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102148672.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102149865.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102252695.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102252010.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102246208.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102254506.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102307246.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102319564.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102333167.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102336521.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102338080.png">
+<meta property="og:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102340030.png">
+<meta property="article:published_time" content="2022-07-07T13:38:14.000Z">
+<meta property="article:modified_time" content="2022-07-10T15:40:11.849Z">
 <meta property="article:author" content="yin-qiyu">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051335014.png">
+<meta name="twitter:image" content="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072205143.png">
   
   
   
-  <title>外部存储器 - Hexo</title>
+  <title>4.2 指令寻址方式 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="外部存储器"></span>
+            <span id="subtitle" data-typed-text="4.2 指令寻址方式"></span>
           
         </div>
 
@@ -258,46 +268,65 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">外部存储器</h1>
+            <h1 style="display: none">4.2 指令寻址方式</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="磁盘存储器"><a href="#磁盘存储器" class="headerlink" title="磁盘存储器"></a>磁盘存储器</h1><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051335014.png" srcset="/img/loading.gif" lazyload alt="image-20220705133524939"></p>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051337128.png" srcset="/img/loading.gif" lazyload alt="image-20220705133712090"></p>
-<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051338854.png" srcset="/img/loading.gif" lazyload alt="image-20220705133807808"></p>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051341854.png" srcset="/img/loading.gif" lazyload alt="image-20220705134132820"></p>
-<p>越靠近内密度越高，越靠外，密度越低</p>
+                <p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072205143.png" srcset="/img/loading.gif" lazyload alt="image-20220707220559096"></p>
+<p>顺序寻址+1不是真正的+1，是当前指令的字长，根据指令长度，编址方式不同</p>
 <ul>
-<li>平均存储时间</li>
+<li>跳跃指令</li>
 </ul>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051346158.png" srcset="/img/loading.gif" lazyload alt="image-20220705134616113"></p>
-<p>若没有给出明确的旋转延迟时间，算半圈</p>
-<ul>
-<li>磁盘地址</li>
-</ul>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051401118.png" srcset="/img/loading.gif" lazyload alt="image-20220705140104076"></p>
-<h2 id="磁盘阵列"><a href="#磁盘阵列" class="headerlink" title="磁盘阵列"></a>磁盘阵列</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051410670.png" srcset="/img/loading.gif" lazyload alt="image-20220705141015628"></p>
-<ul>
-<li>raid0- <font color='yellow'>无容错能力</font></li>
-</ul>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051408748.png" srcset="/img/loading.gif" lazyload alt="image-20220705140857691"></p>
-<ul>
-<li>raid1- 镜像磁盘阵列-<font color='yellow'>容量减少一半</font></li>
-<li>Raid2-采用海明码的磁盘阵列</li>
-</ul>
-<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051411918.png" srcset="/img/loading.gif" lazyload alt="image-20220705141145854" style="zoom:33%;" />
+<img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072212778.png" srcset="/img/loading.gif" lazyload alt="image-20220707221253745" style="zoom:30%;" />
 
-<h1 id="☆新考点固态硬盘"><a href="#☆新考点固态硬盘" class="headerlink" title="☆新考点固态硬盘"></a>☆<font color='red'>新考点</font>固态硬盘</h1><h2 id="考点：-读写性能、磨损均衡技术"><a href="#考点：-读写性能、磨损均衡技术" class="headerlink" title="考点： 读写性能、磨损均衡技术"></a>考点： 读写性能、磨损均衡技术</h2><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051451049.png" srcset="/img/loading.gif" lazyload alt="image-20220705145108997" style="zoom:50%;" />
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207072213225.png" srcset="/img/loading.gif" lazyload alt="image-20220707221337178"></p>
+<h1 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h1><h2 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102132801.png" srcset="/img/loading.gif" lazyload alt="image-20220710213221747"></p>
+<h2 id="间接寻址"><a href="#间接寻址" class="headerlink" title="间接寻址"></a>间接寻址</h2><p>间接寻址是相对于直接寻址而言的，指令的地址字段给出的形式地址不是操作数的真正地 址，而是操作数有效地址所在的存储单元的地址，也就是操作数地址的地址，即EA = (A)</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102133019.png" srcset="/img/loading.gif" lazyload alt="image-20220710213328975"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102139655.png" srcset="/img/loading.gif" lazyload alt="image-20220710213938598"></p>
+<h2 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h2><p> <img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102145614.png" srcset="/img/loading.gif" lazyload alt="image-20220710214509525"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102145827.png" srcset="/img/loading.gif" lazyload alt="image-20220710214523770"></p>
+<h2 id="隐含寻址"><a href="#隐含寻址" class="headerlink" title="隐含寻址"></a>隐含寻址</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102146201.png" srcset="/img/loading.gif" lazyload alt="image-20220710214635137"></p>
+<h2 id="立即寻址"><a href="#立即寻址" class="headerlink" title="立即寻址"></a>立即寻址</h2><p>这种类型的指令的地址字段指出的不是操作数的地址，而是操作数本身，又称立即数，采 用<strong>补码</strong>表示。图4.3所示为立即寻址示意图，图中#表示立即寻址特征，A 就是操作数。</p>
+<p>立即寻址的优点是指令在执行阶段不访问主存，指令执行时间最短;缺点是A 的位数限制 了立即数的范围。</p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102147108.png" srcset="/img/loading.gif" lazyload alt="image-20220710214754036"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102148672.png" srcset="/img/loading.gif" lazyload alt="image-20220710214849600"></p>
+<p>“#”后面是立即数</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102149865.png" srcset="/img/loading.gif" lazyload alt="image-20220710214930796"></p>
+<h2 id="偏移寻址"><a href="#偏移寻址" class="headerlink" title="偏移寻址"></a>偏移寻址</h2><h3 id="基址寻址"><a href="#基址寻址" class="headerlink" title="基址寻址"></a>基址寻址</h3><ul>
+<li><p>面向操作系统</p>
+</li>
+<li><p>基址寄存器（重定位寄存器）（BR–base address register）</p>
+</li>
+<li><p>EA–effective address</p>
+</li>
+<li><p>==优点：便于程度“浮动”，方便实现多道程序并发运行==（<strong>整段程序在内存里的浮动</strong>）</p>
+</li>
+</ul>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102252695.png" srcset="/img/loading.gif" lazyload alt="image-20220710225217632"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102252010.png" srcset="/img/loading.gif" lazyload alt="image-20220710225232951"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102246208.png" srcset="/img/loading.gif" lazyload alt="image-20220710224636133"></p>
+<h3 id="变址寻址"><a href="#变址寻址" class="headerlink" title="变址寻址"></a>变址寻址</h3><ul>
+<li>面向用户</li>
+<li>IX–index  register</li>
+<li>贬值寄存器内容可以由用户改变（作为偏移量），形式地址A不变（作为基地址）</li>
+</ul>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102254506.png" srcset="/img/loading.gif" lazyload alt="image-20220710225439431"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102307246.png" srcset="/img/loading.gif" lazyload alt="image-20220710230749160"></p>
+<h3 id="基址寻址-变址寻址"><a href="#基址寻址-变址寻址" class="headerlink" title="基址寻址+变址寻址"></a>基址寻址+变址寻址</h3><p><strong>基址寻址：EA=(BR)+A</strong></p>
+<p><strong>变址寻址：EA=(IX)+A</strong></p>
+<p><strong>先基址后变址：EA=(IX)+((BR)+A)</strong></p>
+<h3 id="相对寻址"><a href="#相对寻址" class="headerlink" title="相对寻址"></a>相对寻址</h3><ul>
+<li>便于程序浮动（<strong>一段代码在程序内部的分浮动</strong>）</li>
+<li>广泛应用于转移指令</li>
+</ul>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102319564.png" srcset="/img/loading.gif" lazyload alt="image-20220710231912489"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102333167.png" srcset="/img/loading.gif" lazyload alt="image-20220710233312081"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102336521.png" srcset="/img/loading.gif" lazyload alt="image-20220710233603445"></p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102338080.png" srcset="/img/loading.gif" lazyload alt="image-20220710233805971" style="zoom:33%;" />
 
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051418157.png" srcset="/img/loading.gif" lazyload alt="image-20220705141822087"></p>
-<p>固态硬盘(SSD)是一种基于闪存技术的存储器。它与U 盘并没有本质上的差别，只是容 量更大，存取性能更好。一个SSD由一个或多个闪存芯片和闪存翻译层组成，闪存芯片替代传 统旋转磁盘中的机械驱动器，而闪存翻译层将来自CPU的逻辑块读写请求翻译成对底层物理设 备的读写控制信号，因此，这个闪存翻译层相当于扮演了磁盘控制器的角色。</p>
-<p>如图3.15所示，一个闪存由B 块组成，每块由P 页组成。通常，页的大小是512B〜 4KB, 每块由32〜 128页组成，块的大小为16KB〜 512KB。数据是以页为单位读写的。只有在一页所 属的块整个被擦除后，才能写这一页。不过，一旦一个块被擦除，块中的每个页都可以直接再 写一次。某个块进行了约10万次重复写之后，就会磨损坏，不能再使用。</p>
-<p>随机写很慢，有两个原因。首先，擦除块比较慢，1ms级，比访问页高一个数量级。其 次，如果写操作试图修改一个包含已有数据的页尺，那么这个块中所有含有用数据的页都必须 被复制到一个新(擦除过的)块中，才能进行对页尺的写。</p>
-<p>比起传统磁盘，SSD有很多优点，它由半导体存储器构成，没有移动的部件，因而随机访 问时间比机械磁盘要快很多，也没有任何机械噪声和震动，能耗更低，抗震性好，安全性高等。不过，SSD也有缺点，因为反复写之后，闪存块会磨损，所以SSD也容易磨损。闪存翻译</p>
-<p>层中有一个平均磨损逻辑试图通过将擦除平均分布在所有的块上来最大化每个块的寿命。实际 上，平均磨损逻辑处理得非常好，要很多年SSD才会磨损坏。</p>
-<h2 id="读写"><a href="#读写" class="headerlink" title="读写"></a>读写</h2><p>固态硬盘读写以页为单位，固态的一个页相当于磁盘的一个扇区，固态的一个块相当于磁盘的一个磁道，一个磁道包含多个扇区</p>
-<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207051435808.png" srcset="/img/loading.gif" lazyload alt="image-20220705143544737"></p>
+<p><img src="https://yqypicbed.oss-cn-hangzhou.aliyuncs.com/typoraoss/202207102340030.png" srcset="/img/loading.gif" lazyload alt="image-20220710234003938"></p>
 
                 
               </div>
@@ -326,7 +355,7 @@
   
     <span>></span>
     
-  <a href="/categories/408/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" class="category-chain-item">第三章存储系统</a>
+  <a href="/categories/408/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" class="category-chain-item">第四章指令系统</a>
   
   
 
@@ -357,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>外部存储器</div>
-      <div>http://example.com/2022/07/05/外部存储器/</div>
+      <div>4.2 指令寻址方式</div>
+      <div>http://example.com/2022/07/07/4-2-指令寻址方式/</div>
     </div>
     <div class="license-meta">
       
@@ -370,13 +399,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 5, 2022</div>
+          <div>July 7, 2022</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>July 5, 2022</div>
+          <div>July 10, 2022</div>
         </div>
       
       <div class="license-meta-item">
@@ -405,18 +434,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/05/4-1-%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/" title="4.1 指令格式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">4.1 指令格式</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/04/3-7-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/" title="3.7 虚拟存储器">
-                        <span class="hidden-mobile">3.7 虚拟存储器</span>
+                      <a href="/2022/07/05/4-1-%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/" title="4.1 指令格式">
+                        <span class="hidden-mobile">4.1 指令格式</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
